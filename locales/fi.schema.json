@@ -1539,10 +1539,10 @@
         "sort": {
           "label": "Lajittele kokoelmat seuraavasti:",
           "options__1": {
-            "label": "Aakkosjärjestyksessä A–Ö"
+            "label": "Aakkosjärjestyksessä A–Z"
           },
           "options__2": {
-            "label": "Aakkosjärjestyksessä Ö–A"
+            "label": "Aakkosjärjestyksessä Z–A"
           },
           "options__3": {
             "label": "Päivämäärä uusimmasta vanhimpaan"

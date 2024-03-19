@@ -3326,7 +3326,6 @@ details-disclosure > details {
     opacity: 1;
     animation: none;
     transition: none;
-    transform: none;
   }
 
   .scroll-trigger.scroll-trigger--design-mode.animate--slide-in {
