@@ -137,11 +137,11 @@
       "app-optimization": {
         "type": "app-optimization",
         "blocks": {
-          "12bdb842-69c6-4ada-8e4c-68daeb4301a3": {
+          "app_KHfGF7": {
             "type": "app",
             "settings": {
-              "title": "Chat",
-              "url": "cdn.shopify.com\/shopifycloud\/shopify_chat\/storefront\/shopifyChatV1.js",
+              "title": "Geolocation",
+              "url": "geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js",
               "block_index": false,
               "block_product": false,
               "block_collection": false,
@@ -178,11 +178,11 @@
               "interaction_event_2": "click"
             }
           },
-          "0d849f66-f7e9-4508-ba90-5188f2d12b29": {
+          "app_e7VGgd": {
             "type": "app",
             "settings": {
-              "title": "Planet",
-              "url": "cdn.shopify.com\/extensions\/ce9c1310-b006-4899-9293-d04338421543\/0.35.0\/assets\/banner.js",
+              "title": "Judge",
+              "url": "cdn1.judge.me\/assets\/installed.js",
               "block_index": false,
               "block_product": false,
               "block_collection": false,
@@ -221,8 +221,8 @@
           }
         },
         "block_order": [
-          "12bdb842-69c6-4ada-8e4c-68daeb4301a3",
-          "0d849f66-f7e9-4508-ba90-5188f2d12b29"
+          "app_KHfGF7",
+          "app_e7VGgd"
         ],
         "settings": {
           "enable": true,
