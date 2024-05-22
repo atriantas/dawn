@@ -20,5 +20,6 @@
   }
 
   .v-route-block {
-    
+    flex-direction: column;
+    width: 33%;
   }
