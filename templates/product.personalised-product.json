@@ -64,6 +64,12 @@
             "show_gift_card_recipient": true
           }
         },
+        "estimated_YGqb6V": {
+          "type": "estimated",
+          "settings": {
+            "estimate": "Estimated text"
+          }
+        },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
           "type": "icon-with-text",
           "settings": {
@@ -157,6 +163,7 @@
         "personalise",
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
         "buy_buttons",
+        "estimated_YGqb6V",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
         "description",
         "share",
