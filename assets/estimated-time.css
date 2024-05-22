@@ -1,0 +1,8 @@
+.v-route-wrapper {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: center;
+  }
