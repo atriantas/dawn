@@ -99,7 +99,7 @@
           "settings": {
             "heading": "Payments",
             "icon": "check_mark",
-            "content": "<p><strong>We accept the following payment methods:<\/strong><\/p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB<\/li><\/ul><p><\/p><ul><li>The payments are processed through Stripe, Viva Wallet and PayPal.<\/li><\/ul>",
+            "content": "<p><strong>We accept the following payment methods:<\/strong><\/p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB<\/li><\/ul><p>The payments are processed through Stripe, Viva Wallet and PayPal.<\/p>",
             "page": ""
           }
         },
