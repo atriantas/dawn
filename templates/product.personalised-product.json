@@ -68,7 +68,7 @@
           "type": "icon-with-text",
           "settings": {
             "layout": "horizontal",
-            "background_color": "#f2f7f5",
+            "background_color": "#f6f6f4",
             "icon_1": "heart",
             "image_1": "shopify:\/\/shop_images\/Handmade_Color.png",
             "heading_1": "Handmade",
