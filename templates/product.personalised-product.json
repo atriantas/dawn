@@ -64,25 +64,19 @@
             "show_gift_card_recipient": true
           }
         },
-        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<h5 style=\"text-align:center; font-weight: bold; border-radius:6px; padding:8px; background-color: #FDEBBD;box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" style=\"color: #F56400;\">Etsy<\/a> and <a href=\"https:\/\/www.amazon.de\/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #F56400;\">Amazon<\/a> store<\/h5>"
-          }
-        },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
           "type": "icon-with-text",
           "settings": {
             "layout": "horizontal",
-            "background_color": "#f2f7f5",
+            "background_color": "#f8f1dc",
             "icon_1": "heart",
-            "image_1": "shopify:\/\/shop_images\/Handmade_Color.png",
+            "image_1": "shopify:\/\/shop_images\/volunteer_activism_24dp_FILL0_wght300_GRAD0_opsz24.png",
             "heading_1": "Handmade",
             "icon_2": "return",
-            "image_2": "shopify:\/\/shop_images\/Wood_Color.png",
+            "image_2": "shopify:\/\/shop_images\/token_24dp_FILL0_wght300_GRAD0_opsz24.png",
             "heading_2": "{{ product.metafields.custom.material.value }}",
             "icon_3": "truck",
-            "image_3": "shopify:\/\/shop_images\/Personalized_Color.png",
+            "image_3": "shopify:\/\/shop_images\/slab_serif_24dp_FILL0_wght300_GRAD0_opsz24.png",
             "heading_3": "Engraving"
           }
         },
@@ -120,7 +114,7 @@
           "settings": {
             "heading": "Payments",
             "icon": "check_mark",
-            "content": "<p><strong>We accept the following payment methods:<\/strong><\/p><p>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB<\/p><p>The payments are processed through Stripe, Viva Wallet and PayPal.<\/p>",
+            "content": "<p><strong>We accept the following payment methods:<\/strong><\/p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB<\/li><\/ul><p>The payments are processed through Stripe, Viva Wallet and PayPal.<\/p>",
             "page": ""
           }
         },
@@ -145,6 +139,12 @@
             "image_ratio": "square",
             "enable_quick_add": true
           }
+        },
+        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy<\/a> and <a href=\"https:\/\/www.amazon.de\/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon<\/a> store<\/div>"
+          }
         }
       },
       "block_order": [
@@ -157,7 +157,6 @@
         "personalise",
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
         "buy_buttons",
-        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
         "description",
         "share",
@@ -165,7 +164,8 @@
         "collapsible-row-1",
         "92b2f665-58ab-4f83-a4be-e9e7a399e5e9",
         "collapsible-row-3",
-        "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b"
+        "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b",
+        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a"
       ],
       "custom_css": [
         ".icon-with-text--horizontal .h4 {font-weight: bold; font-size: 1.2rem;}"
@@ -193,7 +193,7 @@
           "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
           "settings": {
             "badgeMode": "info",
-            "showLogo": true,
+            "showLogo": false,
             "showMoreInfo": false,
             "showStats": true,
             "showProjects": false,
