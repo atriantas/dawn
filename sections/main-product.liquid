@@ -705,6 +705,8 @@
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
               {%- when 'estimated' -%}
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+
                 <div class="v-route-cont">
                   <p class="ma2 white">Route and Estimated Delivery</p>
                   <p>Estimated Arrival</p>
@@ -733,6 +735,7 @@
                     </div>
                   </div>
                 </div>
+
                 <script>
                   function etaDelivery() {
                     var placedEl = document.getElementsByClassName('v-route-placed');
@@ -917,7 +920,7 @@
           "type": "text",
           "id": "estimate",
           "label": "Estimate",
-          "default": "PEstimated text"
+          "default": "Estimated text"
         }
       ]
     },
