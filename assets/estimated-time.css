@@ -1,6 +1,7 @@
 .v-route-cont {
-    --icon-size: calc(var(--font-heading-scale) * 3rem);
-    --icon-spacing: calc(var(--font-heading-scale) * 1rem);
+    padding: 10px;
+    background: antiquewhite;
+    border-radius: 12px;
   }
 
 .v-route-wrapper {
@@ -10,7 +11,7 @@
     flex-direction: row;
     align-items: flex-end;
     text-align: center;
-    padding: 10px !important;
+    padding: 10px 0!important;
     border-radius: 12px;
   }
 
