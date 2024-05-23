@@ -2,6 +2,10 @@
     border-radius: 12px;
   }
 
+  .ma2-white {
+    font-size: large;
+  }
+
 .v-route-wrapper {
     display: flex;
     justify-content: center;
