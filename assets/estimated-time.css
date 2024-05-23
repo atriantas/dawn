@@ -19,13 +19,13 @@
 
   .v-route-stage{
     font-size:  12px;
-    font-weight: normal;
+    font-weight: bold;
   }
 
   .v-route-placed-under{
     text-decoration: underline;
     font-size:  12px;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .v-route-block-bold{
