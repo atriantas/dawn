@@ -1,11 +1,11 @@
 .v-route-cont {
     border-radius: 12px;
-    background-color: #f6f6f4;
+    background-color: #F8F1DC;
     box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
   }
 
   .estimated-title {
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
     padding-top: 10px;
   }
