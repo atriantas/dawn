@@ -55,6 +55,12 @@
             "estimate": "Estimated text"
           }
         },
+        "custom_liquid_WRmGPj": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p> <img src=\"https:\/\/cdn-icons-png.flaticon.com\/512\/709\/709790.png\" style=\"height:25px;float:left;margin-right:10px;padding-bottom: 4px;\"\/>\nGet it between <strong><span id=\"fromDate\"><\/span> - <span id=\"toDate\"><\/span><\/strong><\/p>\n{{ '\/\/cdnjs.cloudflare.com\/ajax\/libs\/datejs\/1.0\/date.min.js' | script_tag }}\n<script>\nvar fromDate = Date.today().addDays(5);\nif (fromDate.is().saturday() || fromDate.is().sunday()) {\nfromDate = fromDate.next().monday();\n}\nvar toDate = Date.today().addDays(10);\nif (toDate.is().saturday() || toDate.is().sunday()) {\ntoDate = toDate.next().monday();\n}\ndocument.getElementById('fromDate').innerHTML = fromDate.toString('dddd MMMM dS');\ndocument.getElementById('toDate').innerHTML = toDate.toString('dddd MMMM dS');\n<\/script>"
+          }
+        },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
           "type": "icon-with-text",
           "settings": {
@@ -147,6 +153,7 @@
         "quantity_selector",
         "buy_buttons",
         "estimated_3faKje",
+        "custom_liquid_WRmGPj",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
         "description",
         "share",
