@@ -14,12 +14,17 @@
     border-radius: 12px;
   }
 
-  .ma2 white {
+  .ma2-white {
     font-weight: bold;
-    font-size: medium;
+    font-size: large;
   }
 
   .v-route-block {
     flex-direction: column;
     width: 33%;
+  }
+
+  .v-route-block-text{
+    font-size:small;
+    font-weight: bold;
   }
