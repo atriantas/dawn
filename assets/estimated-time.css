@@ -3,7 +3,12 @@
   }
 
   .estimated-title {
-    font-size: medium;
+    font-size: small;
+    text-align: center;
+  }
+
+  .v-estimated-date {
+    font-weight: bold;
   }
 
 .v-route-wrapper {
