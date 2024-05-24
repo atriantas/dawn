@@ -3,28 +3,35 @@
     "96a8e76d-951f-41f4-848e-1713187c10e1": {
       "type": "breadcrumb-bar",
       "settings": {
-        "breadcrumb_text": "These boards are designed to impress and enhance your serving experience."
+        "breadcrumb_text": "Handmade with care, this rustic cutting board is a unique and artisanal addition to any home."
       }
     },
     "4a173050-85b6-4573-aaf1-da5582c2847a": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_cpxJg9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walnut-cutting-boards"
+          }
+        },
+        "featured_collection_zC3kUJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "walnut-charcuterie-boards"
+          }
+        },
         "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "personalized-beech-charcuterie-boards"
-          }
-        },
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beech-charcuterie-boards"
+            "collection": "personalized-walnut-charcuterie-boards"
           }
         }
       },
       "block_order": [
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1",
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-2"
+        "featured_collection_cpxJg9",
+        "featured_collection_zC3kUJ",
+        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1"
       ],
       "custom_css": [
         ".card__media {border-radius: 50%;}",

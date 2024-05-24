@@ -3,6 +3,7 @@
     "96a8e76d-951f-41f4-848e-1713187c10e1": {
       "type": "breadcrumb-bar",
       "settings": {
+        "breadcrumb_text": "Cyanowood's collection of desk accessories can transform your workspace with style."
       }
     },
     "415faf41-fcba-42dd-8629-6025789d3bdc": {
@@ -42,7 +43,7 @@
       "custom_css": [
         ".card__media {border-radius: 50%;}",
         ".card__inner {border: none;}",
-        "h3 {font-size: 13px;}"
+        "h3 {font-size: 13px; text-align: center;}"
       ],
       "settings": {
         "title": "",
@@ -68,7 +69,7 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": true,
-        "enable_quick_add": false,
+        "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
