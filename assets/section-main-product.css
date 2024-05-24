@@ -1220,7 +1220,7 @@ a.product__text {
 
 .icon-with-text-background {
   padding: 10px !important;
-  border-radius: 12px;
+  border-radius: var(--inputs-radius);
 }
 
 .icon-with-text--horizontal {
