@@ -52,7 +52,10 @@
         "estimated_3faKje": {
           "type": "estimated",
           "settings": {
-            "estimate": "Estimated text"
+            "estimate": "Estimated delivery date",
+            "order_placed": "Order placed",
+            "order_shipped": "Parcel shipped",
+            "order_deliveried": "Deliveried"
           }
         },
         "custom_liquid_WRmGPj": {
