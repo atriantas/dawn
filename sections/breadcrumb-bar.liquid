@@ -1,9 +1,10 @@
 {{ 'breadcrumb.css' | asset_url | stylesheet_tag }}
-
-<div class="page-width">
-  {% render 'breadcrumb' %}
-  <p class="inline-richtext">"Collection description"</p>
-</div>
+{% for block in section.blocks %}
+  <div class="page-width">
+    {% render 'breadcrumb' %}
+    <p class="inline-richtext">{{ block.settings.breadcrumb_text }}</p>
+  </div>
+{% endfor %}
 
 {% schema %}
 {
