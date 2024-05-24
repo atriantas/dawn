@@ -1,6 +1,6 @@
 {%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
   {%- assign t = template | split: '.' | first -%}
-  <div>
+  <div class="breadcrumb_bar">
     <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
       <ol class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" class="breadcrumbs__item" itemscope itemtype="http://schema.org/ListItem">

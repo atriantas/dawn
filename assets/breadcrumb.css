@@ -1,5 +1,8 @@
+.breadcrumb_bar {
+  margin-top: 25px;
+}
+
 .breadcrumbs {
-  margin-top: 15px;
   font-size: 13px;
   color: #706b67;
 }
