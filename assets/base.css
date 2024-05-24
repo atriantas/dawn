@@ -1367,8 +1367,9 @@ button.shopify-payment-button__button--unbranded {
 /* Button - social share */
 
 .share-button {
-  display: block;
+  display: flex;
   position: relative;
+  justify-content: center;
 }
 
 .share-button details {
