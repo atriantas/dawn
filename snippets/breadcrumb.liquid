@@ -124,25 +124,3 @@
   </div>
   <p class="inline-richtext">{{ block.settings.breadcrumb_text }}</p>
 {%- endunless -%}
-
-{% schema %}
-{
-  "name": "Breadcrumb",
-  "tag": "section",
-  "class": "section",
-  "blocks": [
-    {
-      "type": "breadcrumb_text",
-      "name": "Breadcrumb_Text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "breadcrumb_text",
-          "label": "Breadcrumb_Text",
-          "default": "Breadcrumb_Text"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
