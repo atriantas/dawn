@@ -36,7 +36,7 @@
       "custom_css": [
         ".card__media {border-radius: 50%;}",
         ".card__inner {border: none;}",
-        "h3 {font-size: 13px; font-weight: bold; text-align: center;}"
+        "h3 {font-size: 13px; text-align: center;}"
       ],
       "settings": {
         "title": "",
