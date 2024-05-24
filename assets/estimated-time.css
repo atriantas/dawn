@@ -46,6 +46,7 @@
 
   .shipping-icon {
     height:20px;
+    width: auto;
     margin-right:5px;
     position: relative;
     top: 5px;
