@@ -1,10 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
-
-{%- liquid
-  assign delivery_min = 1
-  assign delivery_max = 2
--%}
-
 <div style="background:{{ block.settings.delivery_color}}" class="v-route-cont">
   <div class="estimated-title">
     <span class="ma2-white">{{ block.settings.estimate }}</span>
@@ -40,16 +33,16 @@
 
     var today = Date.today();
     {% if localization.country.iso_code == 'GR' %}
-    var fromDate = Date.today().addDays(1);
-    var toDate = Date.today().addDays(3);
+    var fromDate = Date.today().addDays(2);
+    var toDate = Date.today().addDays(5);
     {% else %}
     var fromDate = Date.today().addDays(5);
     var toDate = Date.today().addDays(8);
     {% endif %}
 
 
-    var processingFromDate = Date.today().addDays(2);
-    var processingToDate = Date.today().addDays(5);
+    var processingFromDate = Date.today().addDays(1);
+    var processingToDate = Date.today().addDays(3);
 
     if (fromDate.is().saturday() || fromDate.is().sunday()) {
       fromDate = fromDate.next().monday();
