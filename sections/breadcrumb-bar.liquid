@@ -7,17 +7,20 @@
 {% schema %}
 {
   "name": "Breadcrumb",
-  "settings": [
+  "tag": "section",
+  "class": "section",
+  "blocks": [
     {
-      "type": "text",
-      "id": "breadcrumb_text",
-      "label": "Breadcrumb text",
-      "default": "Collection text"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Breadcrumb"
+      "type": "breadcrumb_text",
+      "name": "Breadcrumb_Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "breadcrumb_text",
+          "label": "Breadcrumb_Text",
+          "default": "Breadcrumb_Text"
+        }
+      ]
     }
   ]
 }
