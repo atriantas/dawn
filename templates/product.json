@@ -3,6 +3,7 @@
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d": {
       "type": "breadcrumb-bar",
       "settings": {
+        "breadcrumb_text": ""
       }
     },
     "main": {
@@ -49,14 +50,20 @@
             "show_gift_card_recipient": true
           }
         },
-        "estimated_cQrfGM": {
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Get a second opinion from your friends!"
+          }
+        },
+        "estimated_3faKje": {
           "type": "estimated",
           "settings": {
             "estimate": "Estimated delivery date",
             "order_placed": "Order placed",
             "order_shipped": "Parcel shipped",
             "order_deliveried": "Delivered",
-            "delivery_color": "#f6f6f4"
+            "delivery_color": "#ffffff"
           }
         },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
@@ -78,12 +85,6 @@
         "description": {
           "type": "description",
           "settings": {
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Get a second opinion from your friends!"
           }
         },
         "collapsible-row-2": {
@@ -140,6 +141,23 @@
           "settings": {
             "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy<\/a> and <a href=\"https:\/\/www.amazon.de\/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon<\/a> store<\/div>"
           }
+        },
+        "planet_shopify_planet_G38rf9": {
+          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "settings": {
+            "badgeMode": "info",
+            "showLogo": false,
+            "showMoreInfo": false,
+            "showStats": true,
+            "showProjects": false,
+            "backgroundColor": "#F1F8F5",
+            "textColor": "#1D4136",
+            "borderColor": "#dcebe5",
+            "fullWidth": true,
+            "marginTop": 0,
+            "marginBottom": 0,
+            "borderRadius": 8
+          }
         }
       },
       "block_order": [
@@ -150,16 +168,18 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "estimated_cQrfGM",
+        "share",
+        "estimated_3faKje",
+        "custom_liquid_WRmGPj",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
         "description",
-        "share",
         "collapsible-row-2",
         "collapsible-row-1",
         "cae09299-0138-4778-9cae-687065ec0055",
         "collapsible-row-3",
         "ee9cabe6-5fd7-437c-bda3-fc3da5f6c42d",
-        "062780e5-2649-4f34-8f19-c728b7e27bd5"
+        "062780e5-2649-4f34-8f19-c728b7e27bd5",
+        "planet_shopify_planet_G38rf9"
       ],
       "custom_css": [
         ".icon-with-text--horizontal .h4 {font-weight: bold; font-size: 1.2rem;}"
@@ -178,34 +198,6 @@
         "enable_video_looping": true,
         "padding_top": 0,
         "padding_bottom": 52
-      }
-    },
-    "1707256775b2e0fe15": {
-      "type": "apps",
-      "blocks": {
-        "planet_shopify_planet_8WnpYU": {
-          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
-          "settings": {
-            "badgeMode": "info",
-            "showLogo": false,
-            "showMoreInfo": false,
-            "showStats": true,
-            "showProjects": false,
-            "backgroundColor": "#e8f5ea",
-            "textColor": "#103c15",
-            "borderColor": "#cfe3d0",
-            "fullWidth": true,
-            "marginTop": 0,
-            "marginBottom": 7,
-            "borderRadius": 12
-          }
-        }
-      },
-      "block_order": [
-        "planet_shopify_planet_8WnpYU"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "related-products": {
@@ -227,6 +219,35 @@
         "columns_mobile": "2",
         "padding_top": 12,
         "padding_bottom": 12
+      }
+    },
+    "1707256775b2e0fe15": {
+      "type": "apps",
+      "blocks": {
+        "planet_shopify_planet_8WnpYU": {
+          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "settings": {
+            "badgeMode": "info",
+            "showLogo": false,
+            "showMoreInfo": false,
+            "showStats": true,
+            "showProjects": false,
+            "backgroundColor": "#e8f5ea",
+            "textColor": "#103c15",
+            "borderColor": "#cfe3d0",
+            "fullWidth": false,
+            "marginTop": 4,
+            "marginBottom": 0,
+            "borderRadius": 8
+          }
+        }
+      },
+      "block_order": [
+        "planet_shopify_planet_8WnpYU"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
       }
     },
     "1b4fda5a-f866-4d3a-8aea-81ba94858dba": {
@@ -268,8 +289,8 @@
   "order": [
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d",
     "main",
-    "1707256775b2e0fe15",
     "related-products",
+    "1707256775b2e0fe15",
     "1b4fda5a-f866-4d3a-8aea-81ba94858dba",
     "1707229620adf6be7a"
   ]

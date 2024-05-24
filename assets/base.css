@@ -292,7 +292,7 @@ h1,
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
-    font-size: calc(var(--font-heading-scale) * 2.6rem);
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
   }
 }
 
@@ -1367,8 +1367,9 @@ button.shopify-payment-button__button--unbranded {
 /* Button - social share */
 
 .share-button {
-  display: block;
+  display: flex;
   position: relative;
+  justify-content: center;
 }
 
 .share-button details {

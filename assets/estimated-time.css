@@ -1,6 +1,7 @@
 .v-route-cont {
    border-radius: var(--inputs-radius);
     box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
+    border: 1px solid #a3a29b;
   }
 
   .estimated-title {
