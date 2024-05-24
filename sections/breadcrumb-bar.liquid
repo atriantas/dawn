@@ -2,26 +2,23 @@
 
 <div class="page-width">
   {% render 'breadcrumb' %}
-  <p class="inline-richtext">{{ settings.breadcrumb_text }}</p>
+  <p class="inline-richtext">"Collection description"</p>
 </div>
 
 {% schema %}
 {
   "name": "Breadcrumb",
-  "tag": "section",
-  "class": "section",
-  "blocks": [
+  "settings": [
     {
-      "type": "breadcrumb_text",
-      "name": "Breadcrumb_Text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "breadcrumb_text",
-          "label": "Breadcrumb_Text",
-          "default": "Breadcrumb_Text"
-        }
-      ]
+      "type": "text",
+      "id": "breadcrumb_text",
+      "label": "Breadcrumb text",
+      "default": "Collection text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumb"
     }
   ]
 }
