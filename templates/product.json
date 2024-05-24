@@ -55,13 +55,13 @@
             "layout": "horizontal",
             "background_color": "#f8f1dc",
             "icon_1": "heart",
-            "image_1": "shopify:\/\/shop_images\/volunteer_activism_24dp_FILL0_wght300_GRAD0_opsz24.png",
+            "image_1": "shopify:\/\/shop_images\/volunteer_activism_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
             "heading_1": "Handmade",
             "icon_2": "return",
-            "image_2": "shopify:\/\/shop_images\/featured_seasonal_and_gifts_24dp_FILL0_wght300_GRAD0_opsz24.png",
+            "image_2": "shopify:\/\/shop_images\/featured_seasonal_and_gifts_24dp_FILL0_wght300_GRAD0_opsz24_9780f691-d880-400b-8529-3d0d1eeab36b.png",
             "heading_2": "Gift wrap",
             "icon_3": "truck",
-            "image_3": "shopify:\/\/shop_images\/token_24dp_FILL0_wght300_GRAD0_opsz24.png",
+            "image_3": "shopify:\/\/shop_images\/stacks_24dp_FILL0_wght300_GRAD0_opsz24_626204aa-2ffb-4f57-8db2-3d3a601b37f1.png",
             "heading_3": "{{ product.metafields.custom.material.value }}"
           }
         },
