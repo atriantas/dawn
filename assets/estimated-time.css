@@ -1,5 +1,5 @@
 .v-route-cont {
-    border-radius: 12px;
+   border-radius: var(--inputs-radius);
     box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
   }
 
@@ -37,11 +37,6 @@
   .v-route-placed-under{
     font-size:  12px;
     font-weight: normal;
-  }
-
-  .v-route-block-bold{
-    font-size: 18px;
-    font-weight: bold;
   }
 
   .shipping-icon {
