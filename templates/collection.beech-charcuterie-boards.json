@@ -30,7 +30,7 @@
         ".card__media {border-radius: 50%;}",
         ".card__inner {border: none;}",
         "h3 {font-size: 13px; font-weight: bold; text-align: center;}",
-        ".slider {width:85%}"
+        ".slider {}"
       ],
       "settings": {
         "title": "",
