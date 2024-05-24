@@ -1,0 +1,48 @@
+.v-route-cont {
+   border-radius: var(--inputs-radius);
+    box-shadow: var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow), var(--inputs-shadow-opacity));
+  }
+
+  .estimated-title {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .v-estimated-date {
+    font-weight: bold;
+  }
+
+.v-route-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: center;
+    padding: 10px 0!important;
+    border-radius: 12px;
+  }
+
+  .v-route-block {
+    flex-direction: column;
+    width: 33%;
+    font-size:  12px;
+    font-weight: bold;
+  }
+
+  .v-route-dispatches{
+    font-size:  12px;
+  }
+
+  .v-route-placed-under{
+    font-size:  12px;
+    font-weight: normal;
+  }
+
+  .shipping-icon {
+    height:20px;
+    width: auto;
+    margin-right:5px;
+    position: relative;
+    top: 5px;
+  }

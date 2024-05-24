@@ -1,0 +1,79 @@
+<div style="background:{{ block.settings.delivery_color}}" class="v-route-cont">
+  <div class="estimated-title">
+    <img
+      class="shipping-icon"
+      src="{{ 'calendar_month_24dp_FILL0_wght300_GRAD0_opsz24.png' | file_img_url | image_tag: 'cyanowood-shipping-icon' }}"
+      loading="lazy"
+      width="96"
+      height="96"
+    >
+    <span class="ma2-white">{{ block.settings.estimate }}</span>
+    <span class="v-estimated-date"></span>
+  </div>
+  <div class="v-route-wrapper">
+    <div class="v-route-block">
+      <div class="v-route-block-text">
+        <div id="placedEl" class="v-route-placed"></div>
+        <div class="v-route-placed-under">{{ block.settings.order_placed }}</div>
+      </div>
+    </div>
+    <div class="v-route-block">
+      <div class="v-route-block-text">
+        <div id="dispatchedEl" class="v-route-dispatches"></div>
+        <div class="v-route-placed-under">{{ block.settings.order_shipped }}</div>
+      </div>
+    </div>
+    <div class="v-route-block">
+      <div class="v-route-block-text">
+        <div id="estimatedEl" class="v-estimated-date"></div>
+        <div class="v-route-placed-under">{{ block.settings.order_deliveried }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function etaDelivery() {
+    var placedEl = document.getElementsByClassName('v-route-placed');
+    var dispatchedEl = document.getElementsByClassName('v-route-dispatches');
+    var estimatedEl = document.getElementsByClassName('v-estimated-date');
+
+    var today = Date.today();
+    {% if localization.country.iso_code == 'GR' %}
+    var fromDate = Date.today().addDays(2);
+    var toDate = Date.today().addDays(5);
+    {% else %}
+    var fromDate = Date.today().addDays(5);
+    var toDate = Date.today().addDays(8);
+    {% endif %}
+
+
+    var processingFromDate = Date.today().addDays(1);
+    var processingToDate = Date.today().addDays(3);
+
+    if (fromDate.is().saturday() || fromDate.is().sunday()) {
+      fromDate = fromDate.next().monday();
+    }
+    if (toDate.is().saturday() || toDate.is().sunday()) {
+      toDate = toDate.next().monday();
+    }
+    if (processingFromDate.is().saturday() || processingFromDate.is().sunday()) {
+      processingFromDate = processingFromDate.next().monday();
+    }
+    if (processingToDate.is().saturday() || processingToDate.is().sunday()) {
+      processingToDate = processingToDate.next().monday();
+    }
+
+    for (let i = 0; i < placedEl.length; i++) {
+      placedEl[i].innerHTML = today.toString('MMM d');
+    }
+    for (let i = 0; i < estimatedEl.length; i++) {
+      estimatedEl[i].innerHTML = fromDate.toString('MMM d') + ' - ' + toDate.toString('MMM d');
+    }
+    for (let i = 0; i < dispatchedEl.length; i++) {
+      dispatchedEl[i].innerHTML = processingFromDate.toString('MMM d') + ' - ' + processingToDate.toString('MMM d');
+    }
+  }
+
+  etaDelivery();
+</script>

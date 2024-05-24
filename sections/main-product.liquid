@@ -9,6 +9,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'estimated-time.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -33,11 +34,12 @@
     }
   {%- endstyle -%}
 
+  <script src="{{ 'date.min.js' | asset_url }}"></script>
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'price-per-item.js' | asset_url }}" defer="async"></script>
   {%- endif -%}
 
   {% if section.settings.image_zoom == 'hover' %}
@@ -703,6 +705,8 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'estimated' -%}
+                {% render 'estimated-time', block: block %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -836,6 +840,42 @@
           "id": "upload",
           "label": "Upload",
           "default": "Upload your file"
+        }
+      ]
+    },
+    {
+      "type": "estimated",
+      "name": "Estimated",
+      "settings": [
+        {
+          "type": "text",
+          "id": "estimate",
+          "label": "Estimate",
+          "default": "Estimated text"
+        },
+        {
+          "type": "text",
+          "id": "order_placed",
+          "label": "Order placed",
+          "default": "Order placed text"
+        },
+        {
+          "type": "text",
+          "id": "order_shipped",
+          "label": "Order shipped",
+          "default": "Order shipped text"
+        },
+        {
+          "type": "text",
+          "id": "order_deliveried",
+          "label": "Order Deliveried",
+          "default": "Order deliveried text"
+        },
+        {
+          "type": "color",
+          "id": "delivery_color",
+          "label": "Background color",
+          "default": "#000000"
         }
       ]
     },
