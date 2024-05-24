@@ -5,6 +5,44 @@
       "settings": {
       }
     },
+    "collection_list_4KcQkm": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_XiabCL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mahogany-cutting-boards"
+          }
+        },
+        "featured_collection_c4y6y7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mahogany-cutting-boards-1"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_XiabCL",
+        "featured_collection_c4y6y7"
+      ],
+      "custom_css": [
+        ".card__media {border-radius: 50%;}",
+        ".card__inner {border: none;}",
+        "h3 {font-size: 13px;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -36,6 +74,7 @@
   },
   "order": [
     "96a8e76d-951f-41f4-848e-1713187c10e1",
+    "collection_list_4KcQkm",
     "product-grid",
     "banner"
   ]
