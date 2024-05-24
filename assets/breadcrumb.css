@@ -1,7 +1,5 @@
 .breadcrumbs {
-  margin: 0px auto;
   margin-top: 15px;
-  margin-bottom: 5px;
   font-size: 13px;
   color: #706b67;
 }
@@ -64,8 +62,9 @@
 
 .collection__title {
   margin-bottom: 15px;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
+  text-transform: lowercase;
 }
 
 .breadcrumb_text{
