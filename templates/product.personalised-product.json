@@ -65,6 +65,12 @@
             "show_gift_card_recipient": true
           }
         },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Get a second opinion from your friends!"
+          }
+        },
         "estimated_YGqb6V": {
           "type": "estimated",
           "settings": {
@@ -145,12 +151,6 @@
             "enable_quick_add": true
           }
         },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Get a second opinion from your friends!"
-          }
-        },
         "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a": {
           "type": "custom_liquid",
           "settings": {
@@ -168,6 +168,7 @@
         "personalise",
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
         "buy_buttons",
+        "share",
         "estimated_YGqb6V",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
         "description",
@@ -176,7 +177,6 @@
         "92b2f665-58ab-4f83-a4be-e9e7a399e5e9",
         "collapsible-row-3",
         "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b",
-        "share",
         "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a"
       ],
       "custom_css": [
