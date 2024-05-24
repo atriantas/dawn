@@ -78,7 +78,7 @@
             "order_placed": "Order place",
             "order_shipped": "Parcel shipped",
             "order_deliveried": "Delivered",
-            "delivery_color": "#f6f6f4"
+            "delivery_color": "#ffffff"
           }
         },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
@@ -156,6 +156,23 @@
           "settings": {
             "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:6px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy<\/a> and <a href=\"https:\/\/www.amazon.de\/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon<\/a> store<\/div>"
           }
+        },
+        "planet_shopify_planet_89LUmm": {
+          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "settings": {
+            "badgeMode": "info",
+            "showLogo": false,
+            "showMoreInfo": true,
+            "showStats": true,
+            "showProjects": false,
+            "backgroundColor": "#F1F8F5",
+            "textColor": "#1D4136",
+            "borderColor": "#dcebe5",
+            "fullWidth": true,
+            "marginTop": 0,
+            "marginBottom": 0,
+            "borderRadius": 8
+          }
         }
       },
       "block_order": [
@@ -177,7 +194,8 @@
         "92b2f665-58ab-4f83-a4be-e9e7a399e5e9",
         "collapsible-row-3",
         "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b",
-        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a"
+        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a",
+        "planet_shopify_planet_89LUmm"
       ],
       "custom_css": [
         ".icon-with-text--horizontal .h4 {font-weight: bold; font-size: 1.2rem;}"
@@ -196,34 +214,6 @@
         "enable_video_looping": false,
         "padding_top": 0,
         "padding_bottom": 52
-      }
-    },
-    "1707258800bbbafd45": {
-      "type": "apps",
-      "blocks": {
-        "planet_shopify_planet_UHEEHt": {
-          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
-          "settings": {
-            "badgeMode": "info",
-            "showLogo": false,
-            "showMoreInfo": false,
-            "showStats": true,
-            "showProjects": false,
-            "backgroundColor": "#e8f5ea",
-            "textColor": "#103c15",
-            "borderColor": "#cfe3d0",
-            "fullWidth": true,
-            "marginTop": 0,
-            "marginBottom": 7,
-            "borderRadius": 8
-          }
-        }
-      },
-      "block_order": [
-        "planet_shopify_planet_UHEEHt"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "related-products": {
@@ -286,7 +276,6 @@
   "order": [
     "880150c9-0457-4f23-b7fe-34088e05bc34",
     "main",
-    "1707258800bbbafd45",
     "related-products",
     "573adcd4-4629-440d-ae6a-7a09bb7d6e98",
     "1707227944349cd686"
