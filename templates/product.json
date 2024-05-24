@@ -55,7 +55,8 @@
             "estimate": "Estimated delivery date",
             "order_placed": "Order placed",
             "order_shipped": "Parcel shipped",
-            "order_deliveried": "Deliveried"
+            "order_deliveried": "Deliveried",
+            "delivery_color": "#f6f6f4"
           }
         },
         "custom_liquid_WRmGPj": {
