@@ -67,7 +67,11 @@
         "estimated_YGqb6V": {
           "type": "estimated",
           "settings": {
-            "estimate": "Estimated text"
+            "estimate": "Estimated text",
+            "order_placed": "Order placed text",
+            "order_shipped": "Order shipped text",
+            "order_deliveried": "Order delivered text",
+            "delivery_color": "#f6f6f4"
           }
         },
         "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
