@@ -11,33 +11,26 @@
         "featured_collection_cpxJg9": {
           "type": "featured_collection",
           "settings": {
-            "collection": "personalized-beech-cutting-boards"
+            "collection": "walnut-cutting-boards"
           }
         },
         "featured_collection_zC3kUJ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beech-cutting-board"
+            "collection": "walnut-charcuterie-boards"
           }
         },
         "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "personalized-beech-charcuterie-boards"
-          }
-        },
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "beech-charcuterie-boards"
+            "collection": "personalized-walnut-charcuterie-boards"
           }
         }
       },
       "block_order": [
         "featured_collection_cpxJg9",
         "featured_collection_zC3kUJ",
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1",
-        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-2"
+        "template--19774329684308__4a173050-85b6-4573-aaf1-da5582c2847a-featured_collection-1"
       ],
       "custom_css": [
         ".card__media {border-radius: 50%;}",
