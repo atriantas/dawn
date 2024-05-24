@@ -35,27 +35,32 @@
                   role="list"
                 >
                   {%- for childlink in link.links -%}
-                    {% if childlink.title == 'image' %}
-                      {% assign linkProduct = childlink.object %}
-                      <li class="mega-menu-featured">
-                        <a class="mega-menu__link mega-menu__link--level-2 link" href="{{ childlink.url }}"
-                          >featured product
-                          <img
-                            class="nav-featured-image"
-                            src="{{ linkProduct.featured_image.src | product_img_url: '250x' }}"
-                            loading="lazy"
-                            alt="{{ childlink.title }}"
-                            width="250"
-                            height="250"
-                          >
-                        </a>
-                      </li>
-                    {% endif %}
+                    {% comment %}
+                      {% if childlink.title == 'image' %}
+                        {% assign linkProduct = childlink.object %}
+                        <li class="mega-menu-featured">
+                          <a class="mega-menu__link mega-menu__link--level-2 link" href="{{ childlink.url }}"
+                            >featured product
+                            <img
+                              class="nav-featured-image"
+                              src="{{ linkProduct.featured_image.src | product_img_url: '250x' }}"
+                              loading="lazy"
+                              alt="{{ childlink.title }}"
+                              width="250"
+                              height="250"
+                            >
+                          </a>
+                        </li>
+                      {% endif %}
+                    {% endcomment %}
+
                     {%- if childlink.title != 'image' -%}
                       {%- if link.title == 'photography'
                         or link.title == 'φωτογραφία'
                         or link.title == 'fotografie'
                         or link.title == 'cutting boards'
+                        or link.title == 'ξύλα κοπής'
+                        or link.title == 'schneidebretter'
                       -%}
                         {%- if childlink.type == 'collection_link' -%}
                           {% assign linkCollection = childlink.object %}
