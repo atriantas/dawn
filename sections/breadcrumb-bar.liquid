@@ -2,12 +2,19 @@
 
 <div class="page-width">
   {% render 'breadcrumb' %}
+  <p class="inline-richtext">{{ section.settings.breadcrumb_text }}</p>
 </div>
 
 {% schema %}
 {
   "name": "Breadcrumb",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "breadcrumb_text",
+      "label": "Breadcrumb text"
+    }
+  ],
   "presets": [
     {
       "name": "Breadcrumb"
