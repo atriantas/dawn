@@ -39,9 +39,15 @@
     var estimatedEl = document.getElementsByClassName('v-estimated-date');
 
     var today = Date.today();
+    {% if localization.country.iso_code == 'GR' %}
+    var fromDate = Date.today().addDays(1);
+    var toDate = Date.today().addDays(3);
+    {% else %}
+    var fromDate = Date.today().addDays(5);
+    var toDate = Date.today().addDays(8);
+    {% endif %}
 
-    var fromDate = Date.today().addDays(delivery_min);
-    var toDate = Date.today().addDays(delivery_max);
+
     var processingFromDate = Date.today().addDays(2);
     var processingToDate = Date.today().addDays(5);
 
