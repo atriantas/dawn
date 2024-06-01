@@ -3,12 +3,13 @@
     "96a8e76d-951f-41f4-848e-1713187c10e1": {
       "type": "breadcrumb-bar",
       "settings": {
+        "breadcrumb_text": ""
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 20,
+        "products_per_page": 28,
         "columns_desktop": 4,
         "color_scheme": "",
         "image_ratio": "square",
