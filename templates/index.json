@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "80303c83-1c4b-4fde-ab05-7ddda680e0f3": {
@@ -72,7 +81,7 @@
         "template--19588003397972__cf208507-b0de-4fad-b8a8-57e8f4a4fafb-text-1": {
           "type": "text",
           "settings": {
-            "text": "<h5>Designed with your memories in mind, this photo box is the perfect storage solution for all your precious moments.<\/h5>",
+            "text": "<h5>Designed with your memories in mind, this photo box is the perfect storage solution for all your precious moments.</h5>",
             "text_style": "body"
           }
         },
@@ -80,7 +89,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop now",
-            "button_link": "shopify:\/\/collections\/5x7-photo-box",
+            "button_link": "shopify://collections/5x7-photo-box",
             "button_style_secondary": true
           }
         }
@@ -90,11 +99,9 @@
         "template--19588003397972__cf208507-b0de-4fad-b8a8-57e8f4a4fafb-text-1",
         "template--19588003397972__cf208507-b0de-4fad-b8a8-57e8f4a4fafb-button-1"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "image": "shopify:\/\/shop_images\/il_1140xN.2533739541_6ywy.jpg",
+        "image": "shopify://shop_images/il_1140xN.2533739541_6ywy.jpg",
         "height": "medium",
         "desktop_image_width": "large",
         "layout": "image_first",
@@ -124,7 +131,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h4><a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" title=\"https:\/\/www.etsy.com\/shop\/CyanoWood\"><strong>Visit our Etsy shop with more than 4.300 sales and 550 reviews.<\/strong><\/a><\/h4>"
+            "text": "<h4><a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" title=\"https://www.etsy.com/shop/CyanoWood\"><strong>Visit our Etsy shop with more than 4.300 sales and 550 reviews.</strong></a></h4>"
           }
         }
       },
@@ -147,15 +154,14 @@
       "type": "apps",
       "blocks": {
         "judge_me_reviews_featured_carousel_EtfTN7": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "maxwidth": 1920
           }
         },
         "judge_me_reviews_all_reviews_text_nLmajj": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/all_reviews_text\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -168,11 +174,9 @@
     },
     "a914f520-02d4-4f80-9095-72ef62a25d14": {
       "type": "featured-collection",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "title": "<strong>Featured collection<\/strong>",
+        "title": "<strong>Featured collection</strong>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -235,8 +239,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "<strong>Handmade in Greece<\/strong>",
-            "text": "<h5>Specializing in custom and handcrafted wooden artifacts.<\/h5>",
+            "title": "<strong>Handmade in Greece</strong>",
+            "text": "<h5>Specializing in custom and handcrafted wooden artifacts.</h5>",
             "link_label": "",
             "link": ""
           }
@@ -244,8 +248,8 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "<strong>Responsible Design<\/strong>",
-            "text": "<h5>Designed with integrity and durably crafted for everyday use.<\/h5>",
+            "title": "<strong>Responsible Design</strong>",
+            "text": "<h5>Designed with integrity and durably crafted for everyday use.</h5>",
             "link_label": "",
             "link": ""
           }
@@ -253,8 +257,8 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "<strong>Sustainable Sourcing<\/strong>",
-            "text": "<h5>We only partner with people who put the earth first.<\/h5>",
+            "title": "<strong>Sustainable Sourcing</strong>",
+            "text": "<h5>We only partner with people who put the earth first.</h5>",
             "link_label": "",
             "link": ""
           }
@@ -262,8 +266,8 @@
         "7dfb1872-5dfe-4f07-91de-c83e511a4a10": {
           "type": "column",
           "settings": {
-            "title": "<strong>Think Recycling<\/strong>",
-            "text": "<h5>We are changing because that’s what consumers want.<\/h5>",
+            "title": "<strong>Think Recycling</strong>",
+            "text": "<h5>We are changing because that’s what consumers want.</h5>",
             "link_label": "",
             "link": ""
           }
@@ -308,9 +312,8 @@
       "type": "apps",
       "blocks": {
         "judge_me_reviews_ugc_media_grid_b4Lgik": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/ugc_media_grid\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -325,11 +328,9 @@
     },
     "d66d4088-aafb-46ca-9d3e-488aae8e9e43": {
       "type": "featured-collection",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "title": "<strong>Jewelry boxes<\/strong>",
+        "title": "<strong>Jewelry boxes</strong>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -362,7 +363,7 @@
       "settings": {
         "title": "Most favorited items",
         "heading_size": "h1",
-        "description": "<p>According to our customers<\/p>",
+        "description": "<p>According to our customers</p>",
         "show_description": false,
         "description_style": "subtitle",
         "collection": "most-favorited-items",
@@ -389,11 +390,11 @@
       "type": "apps",
       "blocks": {
         "0c8a5a0a-f028-411e-8603-6d38c9b78ea9": {
-          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "type": "shopify://apps/planet/blocks/shopify-planet/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
           "settings": {
             "badgeMode": "info",
             "showLogo": true,
-            "showMoreInfo": false,
+            "showMoreInfo": "none",
             "showStats": true,
             "showProjects": true,
             "backgroundColor": "#f2f7f5",
@@ -454,13 +455,12 @@
         "paragraph_dJMJ6C": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
           }
         },
         "email_form_HA9BJA": {
           "type": "email_form",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -477,11 +477,9 @@
     },
     "5e80bdf9-8a1e-4781-b802-959cbf14c57d": {
       "type": "featured-blog",
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
-        "heading": "<strong>Blog posts<\/strong>",
+        "heading": "<strong>Blog posts</strong>",
         "heading_size": "h2",
         "blog": "news",
         "post_limit": 3,

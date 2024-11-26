@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d": {
@@ -11,8 +20,7 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "caption": {
           "type": "text",
@@ -22,14 +30,12 @@
           }
         },
         "judge_me_reviews_preview_badge_CCAeUG": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -40,8 +46,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -72,27 +77,26 @@
             "layout": "horizontal",
             "background_color": "#f6f6f4",
             "icon_1": "heart",
-            "image_1": "shopify:\/\/shop_images\/volunteer_activism_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
+            "image_1": "shopify://shop_images/volunteer_activism_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
             "heading_1": "Handmade",
             "icon_2": "return",
-            "image_2": "shopify:\/\/shop_images\/featured_seasonal_and_gifts_24dp_FILL0_wght300_GRAD0_opsz24_9780f691-d880-400b-8529-3d0d1eeab36b.png",
+            "image_2": "shopify://shop_images/featured_seasonal_and_gifts_24dp_FILL0_wght300_GRAD0_opsz24_9780f691-d880-400b-8529-3d0d1eeab36b.png",
             "heading_2": "Gift wrap",
             "icon_3": "truck",
-            "image_3": "shopify:\/\/shop_images\/stacks_24dp_FILL0_wght300_GRAD0_opsz24_626204aa-2ffb-4f57-8db2-3d3a601b37f1.png",
+            "image_3": "shopify://shop_images/stacks_24dp_FILL0_wght300_GRAD0_opsz24_626204aa-2ffb-4f57-8db2-3d3a601b37f1.png",
             "heading_3": "{{ product.metafields.custom.material.value }}"
           }
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
-            "content": "<p>{{ product.metafields.custom.specs | metafield_tag }}<\/p>",
+            "content": "<p>{{ product.metafields.custom.specs | metafield_tag }}</p>",
             "page": ""
           }
         },
@@ -110,7 +114,7 @@
           "settings": {
             "heading": "Payments",
             "icon": "check_mark",
-            "content": "<p><strong>We accept the following payment methods:<\/strong><\/p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB<\/li><\/ul><p>The payments are processed through Stripe, Viva Wallet and PayPal.<\/p>",
+            "content": "<p><strong>We accept the following payment methods:</strong></p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB</li></ul><p>The payments are processed through Stripe, Viva Wallet and PayPal.</p>",
             "page": ""
           }
         },
@@ -119,7 +123,7 @@
           "settings": {
             "heading": "Faq",
             "icon": "question_mark",
-            "content": "<p><strong>Custom and personalized orders<\/strong><br\/>Every product is handmade for each customer separately, so you are always welcome to ask for custom orders!<\/p><p><strong>Gift wrapping and packaging<\/strong><br\/>Please inform us if you want the product to be wrapped as gift, but we recommend doing it yourself, so you can put your own style too.<\/p>",
+            "content": "<p><strong>Custom and personalized orders</strong><br/>Every product is handmade for each customer separately, so you are always welcome to ask for custom orders!</p><p><strong>Gift wrapping and packaging</strong><br/>Please inform us if you want the product to be wrapped as gift, but we recommend doing it yourself, so you can put your own style too.</p>",
             "page": ""
           }
         },
@@ -139,15 +143,15 @@
         "062780e5-2649-4f34-8f19-c728b7e27bd5": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https:\/\/www.etsy.com\/shop\/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy<\/a> and <a href=\"https:\/\/www.amazon.de\/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon<\/a> store<\/div>"
+            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy</a> and <a href=\"https://www.amazon.de/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon</a> store</div>"
           }
         },
         "planet_shopify_planet_G38rf9": {
-          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "type": "shopify://apps/planet/blocks/shopify-planet/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
           "settings": {
             "badgeMode": "info",
             "showLogo": false,
-            "showMoreInfo": false,
+            "showMoreInfo": "none",
             "showStats": true,
             "showProjects": false,
             "backgroundColor": "#f1f8f5",
@@ -224,11 +228,11 @@
       "type": "apps",
       "blocks": {
         "planet_shopify_planet_8WnpYU": {
-          "type": "shopify:\/\/apps\/planet\/blocks\/shopify-planet\/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "type": "shopify://apps/planet/blocks/shopify-planet/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
           "settings": {
             "badgeMode": "info",
             "showLogo": false,
-            "showMoreInfo": false,
+            "showMoreInfo": "none",
             "showStats": true,
             "showProjects": false,
             "backgroundColor": "#e8f5ea",
@@ -262,14 +266,12 @@
       "type": "apps",
       "blocks": {
         "judge_me_reviews_ugc_media_grid_YxVwFJ": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/ugc_media_grid\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "judge_me_reviews_review_widget_fNTV4W": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
