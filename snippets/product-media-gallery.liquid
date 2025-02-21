@@ -182,24 +182,30 @@
     {% if section.settings.gallery_layout == 'thumbnail_slider' %}
       <div class="arrow_desktop_slider">
         <button type="button" class="arrow_desktop_slider--prev slider-button slider-button--prev" name="previous">
-          {% render 'icon-caret' %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
         <button type="button" class="arrow_desktop_slider--next slider-button slider-button--next" name="next">
-          {% render 'icon-caret' %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
       </div>
     {% endif %}
     <!-- end custom arrow -->
 
     {% comment %}
-        <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
+          <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
         <button
           type="button"
           class="slider-button slider-button--prev"
           name="previous"
           aria-label="{{ 'general.slider.previous_slide' | t }}"
         >
-          {% render 'icon-caret' %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
         <div class="slider-counter caption">
           <span class="slider-counter--current">1</span>
@@ -213,10 +219,11 @@
           name="next"
           aria-label="{{ 'general.slider.next_slide' | t }}"
         >
-          {% render 'icon-caret' %}
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
         </button>
       </div>
-            {%- endunless -%}
     {% endcomment %}
   </slider-component>
   {%- if first_3d_model -%}
@@ -229,7 +236,9 @@
       data-shopify-title="{{ product.title | escape }}"
       data-shopify-xr-hidden
     >
-      {% render 'icon-3d-model' %}
+      <span class="svg-wrapper">
+        {{- 'icon-3d-model.svg' | inline_asset_content -}}
+      </span>
       {{ 'products.product.xr_button' | t }}
     </button>
   {%- endif -%}
@@ -256,7 +265,9 @@
         aria-controls="GalleryThumbnails-{{ section.id }}"
         data-step="3"
       >
-        {% render 'icon-caret' %}
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
       </button>
       <ul
         id="Slider-Thumbnails-{{ section.id }}"
@@ -334,11 +345,15 @@
             >
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">
-                  {%- render 'icon-3d-model' -%}
+                  <span class="svg-wrapper">
+                    {{- 'icon-3d-model.svg' | inline_asset_content -}}
+                  </span>
                 </span>
               {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
                 <span class="thumbnail__badge" aria-hidden="true">
-                  {%- render 'icon-play' -%}
+                  <span class="svg-wrapper">
+                    {{- 'icon-play.svg' | inline_asset_content -}}
+                  </span>
                 </span>
               {%- endif -%}
               {%- capture thumbnail_id -%}
@@ -380,7 +395,9 @@
         aria-controls="GalleryThumbnails-{{ section.id }}"
         data-step="3"
       >
-        {% render 'icon-caret' %}
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
       </button>
     </slider-component>
   {%- endif -%}
