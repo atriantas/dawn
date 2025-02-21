@@ -189,7 +189,9 @@
                           <span class="visually-hidden">
                             {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                           </span>
-                          {% render 'icon-minus' %}
+                          <span class="svg-wrapper">
+                            {{- 'icon-minus.svg' | inline_asset_content -}}
+                          </span>
                         </button>
                         <input
                           class="quantity__input"
@@ -211,7 +213,9 @@
                           <span class="visually-hidden">
                             {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                           </span>
-                          {% render 'icon-plus' %}
+                          <span class="svg-wrapper">
+                            {{- 'icon-plus.svg' | inline_asset_content -}}
+                          </span>
                         </button>
                       </quantity-input>
                       {%- liquid
@@ -441,7 +445,7 @@
               class="link product__view-details animate-arrow"
             >
               {{ 'products.product.view_full_details' | t }}
-              {% render 'icon-arrow' %}
+              {{- 'icon-arrow.svg' | inline_asset_content -}}
             </a>
           </section>
         </div>
@@ -674,14 +678,6 @@
           "id": "share_label",
           "label": "t:sections.featured-product.blocks.share.settings.text.label",
           "default": "t:sections.featured-product.blocks.share.settings.text.default"
-        },
-        {
-          "type": "paragraph",
-          "content": "t:sections.featured-product.blocks.share.settings.featured_image_info.content"
-        },
-        {
-          "type": "paragraph",
-          "content": "t:sections.featured-product.blocks.share.settings.title_info.content"
         }
       ]
     },
@@ -1344,8 +1340,7 @@
     },
     {
       "type": "header",
-      "content": "t:sections.featured-product.settings.header.content",
-      "info": "t:sections.featured-product.settings.header.info"
+      "content": "t:sections.featured-product.settings.header.content"
     },
     {
       "type": "select",
@@ -1365,8 +1360,7 @@
         }
       ],
       "default": "medium",
-      "label": "t:sections.main-product.settings.media_size.label",
-      "info": "t:sections.main-product.settings.media_size.info"
+      "label": "t:sections.main-product.settings.media_size.label"
     },
     {
       "type": "checkbox",
@@ -1404,8 +1398,7 @@
         }
       ],
       "default": "left",
-      "label": "t:sections.featured-product.settings.media_position.label",
-      "info": "t:sections.featured-product.settings.media_position.info"
+      "label": "t:sections.featured-product.settings.media_position.label"
     },
     {
       "type": "select",
@@ -1425,8 +1418,7 @@
         }
       ],
       "default": "lightbox",
-      "label": "t:sections.main-product.settings.image_zoom.label",
-      "info": "t:sections.main-product.settings.image_zoom.info"
+      "label": "t:sections.main-product.settings.image_zoom.label"
     },
     {
       "type": "checkbox",

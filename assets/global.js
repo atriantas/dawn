@@ -619,6 +619,7 @@ class ModalDialog extends HTMLElement {
   connectedCallback() {
     if (this.moved) return;
     this.moved = true;
+    this.dataset.section = this.closest('.shopify-section').id.replace('shopify-section-', '');
     document.body.appendChild(this);
   }
 
@@ -710,6 +711,13 @@ class DeferredMedia extends HTMLElement {
         // force autoplay for safari
         deferredElement.play();
       }
+
+      // Workaround for safari iframe bug
+      const formerStyle = deferredElement.getAttribute('style');
+      deferredElement.setAttribute('style', 'display: block;');
+      window.setTimeout(() => {
+        deferredElement.setAttribute('style', formerStyle);
+      }, 0);
     }
   }
 }
