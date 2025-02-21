@@ -476,9 +476,11 @@
         {%- endif -%}
         <details id="Details-CartDrawer">
           <summary>
-            <span class="summary__title"> Add gift wrap </span>
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
+            <span class="summary__title">
+              Add gift wrap
+              <div class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </div>
             </span>
           </summary>
           {% render 'gift-wrapping' %}
