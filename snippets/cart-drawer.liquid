@@ -478,7 +478,9 @@
           <summary>
             <span class="summary__title">
               Add gift wrap
-              {% render 'icon-caret' %}
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
             </span>
           </summary>
           {% render 'gift-wrapping' %}
