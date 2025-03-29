@@ -1,7 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "announcement_bar_FQqDX7": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_iaGz7p": {
+          "type": "announcement",
+          "settings": {
+            "text": "All orders will be shipped after April 9th.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_iaGz7p"
+      ],
+      "custom_css": [
+        "span {font-weight: bold;}"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-3892af01-0fe2-4a0e-8a79-f96ee56c2fc6",
+        "show_line_separator": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
     "c59d199c-c7e9-490b-8158-5ff5bba84cf4": {
       "type": "custom-liquid",
       "custom_css": [
@@ -17,8 +53,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "color_scheme": "scheme-1",
         "logo_position": "top-center",
+        "mobile_logo_position": "center",
         "menu": "mega-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "none",
@@ -27,7 +63,7 @@
         "menu_color_scheme": "background-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
-        "mobile_logo_position": "center",
+        "enable_customer_avatar": true,
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20
@@ -35,6 +71,7 @@
     }
   },
   "order": [
+    "announcement_bar_FQqDX7",
     "c59d199c-c7e9-490b-8158-5ff5bba84cf4",
     "header"
   ]
