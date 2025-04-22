@@ -1,8 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/Cyanowood_Logo_260.png",
+    "logo": "shopify://shop_images/Cyanowood_Logo_260.png",
     "logo_width": 260,
-    "favicon": "shopify:\/\/shop_images\/Cyanowood_Favicon_32.png",
+    "favicon": "shopify://shop_images/Cyanowood_Favicon_32.png",
     "type_header_font": "sans-serif",
     "heading_scale": 100,
     "type_body_font": "sans-serif",
@@ -98,16 +107,16 @@
     "sale_badge_color_scheme": "scheme-2bbc0bd0-dd31-4c5f-9945-69834ecc22a0",
     "sold_out_badge_color_scheme": "inverse",
     "brand_headline": "Handmade with love",
-    "brand_description": "<p>The concept of CyanoWood is to create a handmade unique product for every customer.<\/p>",
-    "brand_image": "shopify:\/\/shop_images\/Cyanowood_Logo_260.png",
+    "brand_description": "<p>The concept of CyanoWood is to create a handmade unique product for every customer.</p>",
+    "brand_image": "shopify://shop_images/Cyanowood_Logo_260.png",
     "brand_image_width": 210,
-    "social_facebook_link": "https:\/\/www.facebook.com\/CyanoWood\/",
-    "social_instagram_link": "https:\/\/www.instagram.com\/cyanowood\/",
+    "social_facebook_link": "https://www.facebook.com/CyanoWood/",
+    "social_instagram_link": "https://www.instagram.com/cyanowood/",
     "social_youtube_link": "",
-    "social_tiktok_link": "https:\/\/www.tiktok.com\/@cyanowood",
+    "social_tiktok_link": "https://www.tiktok.com/@cyanowood",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "https:\/\/pinterest.com\/CyanoWood\/",
+    "social_pinterest_link": "https://pinterest.com/CyanoWood/",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,
@@ -118,7 +127,7 @@
     "show_vendor": false,
     "show_cart_note": true,
     "cart_drawer_collection": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/DEFAULT_LOGO.png",
+    "checkout_logo_image": "shopify://shop_images/DEFAULT_LOGO.png",
     "checkout_accent_color": "#1f9393",
     "checkout_button_color": "#1f9393",
     "sections": {
@@ -141,7 +150,7 @@
             "type": "app",
             "settings": {
               "title": "Geolocation",
-              "url": "geolocation-recommendations.shopifyapps.com\/locale_bar\/script.js",
+              "url": "geolocation-recommendations.shopifyapps.com/locale_bar/script.js",
               "block_index": false,
               "block_product": false,
               "block_collection": false,
@@ -182,7 +191,7 @@
             "type": "app",
             "settings": {
               "title": "Judge",
-              "url": "cdn1.judge.me\/assets\/installed.js",
+              "url": "cdn1.judge.me/assets/installed.js",
               "block_index": false,
               "block_product": false,
               "block_collection": false,
@@ -230,31 +239,27 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "13768625480086291342": {
-        "type": "shopify:\/\/apps\/forms\/blocks\/forms\/8744a304-fcb1-4347-b211-bb6b4759a76a",
+        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
           "button_color": "#1f9393",
-          "secondary_color": "#FFFFFF",
-          "ternary_color": "#6A6A6A",
+          "secondary_color": "#ffffff",
+          "ternary_color": "#6a6a6a",
           "button_icon": "chat_bubble",
-          "button_text": "chat_with_us",
+          "button_text": "no_text",
           "button_horizontal_position": "bottom_right",
           "button_vertical_position": "lowest",
           "greeting_message": "👋 Hello! Please message us if you have questions, or give an idea of what you’re looking for. We’re happy to make recommendations."
