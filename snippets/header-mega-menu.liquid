@@ -58,9 +58,11 @@
                       {%- if link.title == 'photography'
                         or link.title == 'φωτογραφία'
                         or link.title == 'fotografie'
+                        or link.title == 'photographie'
                         or link.title == 'cutting boards'
                         or link.title == 'ξύλα κοπής'
                         or link.title == 'schneidebretter'
+                        or link.title == 'planches à découper'
                       -%}
                         {%- if childlink.type == 'collection_link' -%}
                           {% assign linkCollection = childlink.object %}
