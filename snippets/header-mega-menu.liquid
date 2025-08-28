@@ -59,10 +59,12 @@
                         or link.title == 'φωτογραφία'
                         or link.title == 'fotografie'
                         or link.title == 'photographie'
+                        or link.title == 'fotografía'
                         or link.title == 'cutting boards'
                         or link.title == 'ξύλα κοπής'
                         or link.title == 'schneidebretter'
                         or link.title == 'planches à découper'
+                        or link.title == 'tablas de cortar'
                       -%}
                         {%- if childlink.type == 'collection_link' -%}
                           {% assign linkCollection = childlink.object %}
