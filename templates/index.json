@@ -161,12 +161,24 @@
         },
         "judge_me_reviews_all_reviews_text_nLmajj": {
           "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_text/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "judge_me_reviews_medals_8yFRyC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "judge_me_reviews_verified_badge_HN7fbi": {
+          "type": "shopify://apps/judge-me-reviews/blocks/verified_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         }
       },
       "block_order": [
         "judge_me_reviews_featured_carousel_EtfTN7",
-        "judge_me_reviews_all_reviews_text_nLmajj"
+        "judge_me_reviews_all_reviews_text_nLmajj",
+        "judge_me_reviews_medals_8yFRyC",
+        "judge_me_reviews_verified_badge_HN7fbi"
       ],
       "settings": {
         "include_margins": false
@@ -493,21 +505,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1756582635d9c56708": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_medals_iTrWPK": {
-          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_medals_iTrWPK"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -526,7 +523,6 @@
     "169443922589a958a5",
     "43eeb547-1756-430c-9094-5375fe62678c",
     "newsletter_jEfNFx",
-    "5e80bdf9-8a1e-4781-b802-959cbf14c57d",
-    "1756582635d9c56708"
+    "5e80bdf9-8a1e-4781-b802-959cbf14c57d"
   ]
 }
