@@ -105,13 +105,13 @@
         "height": "medium",
         "desktop_image_width": "large",
         "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
+        "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
         "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -176,18 +176,18 @@
       "type": "featured-collection",
       "custom_css": [],
       "settings": {
+        "collection": "featured-collection",
+        "products_to_show": 11,
         "title": "<strong>Featured collection</strong>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "featured-collection",
-        "products_to_show": 11,
         "columns_desktop": 5,
+        "enable_desktop_slider": true,
         "full_width": true,
         "show_view_all": false,
         "view_all_style": "solid",
-        "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -208,18 +208,18 @@
         ".grid {justify-content: center;}"
       ],
       "settings": {
+        "collection": "2-circle-collection",
+        "products_to_show": 2,
         "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "subtitle",
-        "collection": "2-circle-collection",
-        "products_to_show": 2,
         "columns_desktop": 3,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "link",
-        "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "round",
@@ -287,11 +287,11 @@
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
@@ -330,18 +330,18 @@
       "type": "featured-collection",
       "custom_css": [],
       "settings": {
+        "collection": "jewellery-boxes",
+        "products_to_show": 10,
         "title": "<strong>Jewelry boxes</strong>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "subtitle",
-        "collection": "jewellery-boxes",
-        "products_to_show": 10,
         "columns_desktop": 5,
+        "enable_desktop_slider": true,
         "full_width": true,
         "show_view_all": true,
         "view_all_style": "link",
-        "enable_desktop_slider": true,
         "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
         "image_ratio": "square",
         "image_shape": "default",
@@ -361,18 +361,18 @@
         "{text-align: center;}"
       ],
       "settings": {
+        "collection": "most-favorited-items",
+        "products_to_show": 5,
         "title": "Most favorited items",
         "heading_size": "h1",
         "description": "<p>According to our customers</p>",
         "show_description": false,
         "description_style": "subtitle",
-        "collection": "most-favorited-items",
-        "products_to_show": 5,
         "columns_desktop": 5,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "link",
-        "enable_desktop_slider": false,
         "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
         "image_ratio": "square",
         "image_shape": "round",
@@ -393,8 +393,9 @@
           "type": "shopify://apps/planet/blocks/shopify-planet/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
           "settings": {
             "badgeMode": "info",
-            "showLogo": true,
+            "customText": "",
             "showMoreInfo": "none",
+            "showLogo": true,
             "showStats": true,
             "showProjects": true,
             "backgroundColor": "#f2f7f5",
@@ -417,18 +418,18 @@
     "43eeb547-1756-430c-9094-5375fe62678c": {
       "type": "featured-collection",
       "settings": {
+        "collection": "cutting-boards",
+        "products_to_show": 4,
         "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "cutting-boards",
-        "products_to_show": 4,
         "columns_desktop": 4,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -479,18 +480,33 @@
       "type": "featured-blog",
       "custom_css": [],
       "settings": {
-        "heading": "<strong>Blog posts</strong>",
-        "heading_size": "h2",
         "blog": "news",
         "post_limit": 3,
+        "heading": "<strong>Blog posts</strong>",
+        "heading_size": "h2",
         "columns_desktop": 3,
-        "color_scheme": "",
+        "show_view_all": true,
         "show_image": false,
         "show_date": true,
         "show_author": false,
-        "show_view_all": true,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "1756582635d9c56708": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_medals_iTrWPK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_medals_iTrWPK"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
@@ -510,6 +526,7 @@
     "169443922589a958a5",
     "43eeb547-1756-430c-9094-5375fe62678c",
     "newsletter_jEfNFx",
-    "5e80bdf9-8a1e-4781-b802-959cbf14c57d"
+    "5e80bdf9-8a1e-4781-b802-959cbf14c57d",
+    "1756582635d9c56708"
   ]
 }
