@@ -243,6 +243,49 @@
         "padding_bottom": 28
       }
     },
+    "rich_text_7NrRP6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3MambC": {
+          "type": "heading",
+          "settings": {
+            "heading": "You can also visit our Etsy and Amazon stores!",
+            "heading_size": "h1"
+          }
+        },
+        "text_PyiW6D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Expand your shopping possibilities by browsing through our marketplace as well.</p>"
+          }
+        },
+        "button_AmUPHP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Etsy",
+            "button_link": "https://www.etsy.com/shop/CyanoWood",
+            "button_style_secondary": true,
+            "button_label_2": "Amazon",
+            "button_link_2": "https://www.amazon.de/s?me=A123C76R657ZYQ",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_3MambC",
+        "text_PyiW6D",
+        "button_AmUPHP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "573adcd4-4629-440d-ae6a-7a09bb7d6e98": {
       "type": "custom-liquid",
       "settings": {
@@ -284,6 +327,7 @@
     "880150c9-0457-4f23-b7fe-34088e05bc34",
     "main",
     "related-products",
+    "rich_text_7NrRP6",
     "573adcd4-4629-440d-ae6a-7a09bb7d6e98",
     "1707227944349cd686"
   ]
