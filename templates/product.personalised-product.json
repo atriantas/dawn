@@ -321,6 +321,54 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "image_with_text_pQk8Rh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WngCxh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet the designer of Cyanowood",
+            "heading_size": "h1"
+          }
+        },
+        "text_4GfDpd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Crafting top-notch artistic items with innovative designs and materials for any occasion. Local establishment prioritizes customer happiness over mass production.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_6Re6MD": {
+          "type": "button",
+          "settings": {
+            "button_label": "About us",
+            "button_link": "shopify://pages/about-us-2",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_WngCxh",
+        "text_4GfDpd",
+        "button_6Re6MD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/20250829-Image_pxb74epxb74epxb7.jpg",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-3892af01-0fe2-4a0e-8a79-f96ee56c2fc6",
+        "color_scheme": "scheme-3892af01-0fe2-4a0e-8a79-f96ee56c2fc6",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -329,6 +377,7 @@
     "related-products",
     "rich_text_7NrRP6",
     "573adcd4-4629-440d-ae6a-7a09bb7d6e98",
-    "1707227944349cd686"
+    "1707227944349cd686",
+    "image_with_text_pQk8Rh"
   ]
 }
