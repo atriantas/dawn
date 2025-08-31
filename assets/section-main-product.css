@@ -1232,7 +1232,7 @@ a.product__text {
 
 /* Icon with text */
 .icon-with-text {
-  --icon-size: calc(var(--font-heading-scale) * 3rem);
+  --icon-size: calc(var(--font-heading-scale) * 6rem);
   --icon-spacing: calc(var(--font-heading-scale) * 1rem);
 }
 
@@ -1246,7 +1246,7 @@ a.product__text {
   justify-content: center;
   column-gap: 3rem;
   flex-direction: row;
-  box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));
+  /*box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));*/
 }
 
 .icon-with-text--vertical {
