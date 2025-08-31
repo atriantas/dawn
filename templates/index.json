@@ -110,19 +110,10 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
-        "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
+        "section_color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
+        "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "custom_liquid_NQcPrj": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 0
       }
     },
     "rich_text": {
@@ -304,7 +295,7 @@
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "none",
-        "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
+        "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -510,7 +501,6 @@
   "order": [
     "80303c83-1c4b-4fde-ab05-7ddda680e0f3",
     "cf208507-b0de-4fad-b8a8-57e8f4a4fafb",
-    "custom_liquid_NQcPrj",
     "rich_text",
     "17072381483a75b793",
     "a914f520-02d4-4f80-9095-72ef62a25d14",
