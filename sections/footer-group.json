@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -6,7 +15,7 @@
       "type": "apps",
       "blocks": {
         "34812d7e-7f00-456b-b8c7-2946119f03cf": {
-          "type": "shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
           "settings": {
             "form_id": "",
             "text_color": "#202020",
@@ -56,7 +65,7 @@
           "type": "text",
           "settings": {
             "heading": "Company Tag",
-            "subtext": "<p>Artemidos 12, Aigio, 251 00, Greece<br\/>Triantafyllopoulos Geor. Athanasios<br\/>VAT ID: EL163752984<br\/> support@cyanowood.com<br\/> +30 694 47 48 166<\/p>"
+            "subtext": "<p>Artemidos 12, Aigio, 251 00, Greece<br/>Triantafyllopoulos Geor. Athanasios<br/>VAT ID: EL163752984<br/> support@cyanowood.com<br/> +30 694 47 48 166</p>"
           }
         },
         "af0263bc-60b0-4a4f-86b2-917f13897244": {
@@ -72,7 +81,7 @@
         "af0263bc-60b0-4a4f-86b2-917f13897244"
       ],
       "settings": {
-        "color_scheme": "scheme-4eec6518-de0d-4516-a64f-0e92c5526993",
+        "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
