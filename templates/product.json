@@ -159,6 +159,7 @@
         },
         "062780e5-2649-4f34-8f19-c728b7e27bd5": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy</a> and <a href=\"https://www.amazon.de/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon</a> store</div>"
           }
@@ -243,6 +244,49 @@
         "padding_bottom": 12
       }
     },
+    "rich_text_9CKk3T": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9MPDdp": {
+          "type": "heading",
+          "settings": {
+            "heading": "You can also visit our Etsy and Amazon stores!",
+            "heading_size": "h2"
+          }
+        },
+        "text_bCgx3i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Expand your shopping possibilities by browsing through our marketplace as well.</p>"
+          }
+        },
+        "button_cUF6MV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Etsy",
+            "button_link": "https://www.etsy.com/shop/CyanoWood",
+            "button_style_secondary": true,
+            "button_label_2": "Amazon",
+            "button_link_2": "https://www.amazon.de/s?me=A123C76R657ZYQ",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_9MPDdp",
+        "text_bCgx3i",
+        "button_cUF6MV"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "1b4fda5a-f866-4d3a-8aea-81ba94858dba": {
       "type": "custom-liquid",
       "settings": {
@@ -284,6 +328,7 @@
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d",
     "main",
     "related-products",
+    "rich_text_9CKk3T",
     "1b4fda5a-f866-4d3a-8aea-81ba94858dba",
     "1707229620adf6be7a"
   ]
