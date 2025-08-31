@@ -158,7 +158,7 @@
         "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #F8F1DC; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy</a> and <a href=\"https://www.amazon.de/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon</a> store</div>"
+            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #f8f1dc; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy</a> and <a href=\"https://www.amazon.de/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon</a> store</div>"
           }
         },
         "planet_shopify_planet_89LUmm": {
