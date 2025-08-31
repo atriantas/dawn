@@ -87,6 +87,22 @@
             "heading_3": "{{ product.metafields.custom.material.value }}"
           }
         },
+        "icon_with_text_ziCGPD": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "background_color": "#ffffff",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/volunteer_activism_50dp_1F9393_Circle.png",
+            "heading_1": "<strong>Handmade</strong>",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/featured_seasonal_and_gifts_50dp_1F9393.png",
+            "heading_2": "<strong>Gift wrap</strong>",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/stacks_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
+            "heading_3": "<strong>Walnut</strong>"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -176,6 +192,7 @@
         "share",
         "estimated_3faKje",
         "16bf1687-5947-4c0a-aec9-fa723370ab9b",
+        "icon_with_text_ziCGPD",
         "description",
         "collapsible-row-2",
         "collapsible-row-1",
