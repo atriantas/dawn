@@ -169,7 +169,7 @@
           "settings": {
             "badgeMode": "info",
             "customText": "",
-            "showMoreInfo": "none",
+            "showMoreInfo": "modal",
             "showLogo": false,
             "showStats": true,
             "showProjects": false,
