@@ -117,7 +117,7 @@
             "transition_speed": 5,
             "carousel_style": "highlight",
             "header_text": "Real customer stories",
-            "show_average_rating": true
+            "show_average_rating": false
           }
         }
       },
