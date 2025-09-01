@@ -101,7 +101,7 @@
             "heading_2": "Gift wrap",
             "icon_3": "truck",
             "image_3": "shopify://shop_images/stacks_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
-            "heading_3": "Walnut"
+            "heading_3": "{{ product.metafields.custom.material.value }}"
           }
         },
         "description": {
