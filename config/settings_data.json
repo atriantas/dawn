@@ -568,8 +568,8 @@
   "platform_customizations": {
     "custom_css": [
       "/* Remove local pickup information */.pickup-availability-button {display: none !important;}",
-      "pickup-availability {display: none; }",
-      "/* end */"
+      "pickup-availability {display: none;}",
+      " /* end */"
     ]
   }
 }
