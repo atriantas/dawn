@@ -9,6 +9,45 @@
  */
 {
   "sections": {
+    "17624431679ac0b9af": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_55895a2_j8YYF3": {
+          "type": "ai_gen_block_55895a2",
+          "settings": {
+            "heading": "Personalize your product",
+            "heading_size": 20,
+            "description": "Add your custom text and drag it to position it on the product.",
+            "description_size": 14,
+            "field_label": "Your custom text",
+            "input_placeholder": "Enter your text here",
+            "property_name": "Personalization",
+            "required": false,
+            "max_characters": 50,
+            "show_character_count": true,
+            "preview_placeholder": "Your text here",
+            "preview_max_width": 500,
+            "preview_font": "system_ui_n4",
+            "preview_font_size": 24,
+            "preview_font_weight": "600",
+            "preview_text_color": "#3f3631",
+            "background_color": "#f3f3f3",
+            "text_color": "#000000",
+            "input_border_color": "#cccccc",
+            "input_focus_color": "#1f9393",
+            "border_radius": 6,
+            "input_border_radius": 6,
+            "image_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_55895a2_j8YYF3"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d": {
       "type": "breadcrumb-bar",
       "settings": {
@@ -380,6 +419,7 @@
     }
   },
   "order": [
+    "17624431679ac0b9af",
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d",
     "main",
     "related-products",
