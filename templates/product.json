@@ -9,6 +9,63 @@
  */
 {
   "sections": {
+    "17624613889b3841c3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8ccd9aa_rVd9LY": {
+          "type": "ai_gen_block_8ccd9aa",
+          "settings": {
+            "summary_text": "Customize Your Product Here",
+            "collapsible_background_color": "#ffffff",
+            "collapsible_hover_background_color": "#f5f5f5",
+            "collapsible_text_color": "#000000",
+            "collapsible_hover_text_color": "#000000",
+            "collapsible_border_color": "#e0e0e0",
+            "collapsible_hover_border_color": "#cccccc",
+            "collapsible_border_thickness": 1,
+            "collapsible_border_radius": 6,
+            "arrow_color": "#000000",
+            "arrow_hover_color": "#1f9393",
+            "shadow_horizontal": 0,
+            "shadow_vertical": 2,
+            "shadow_blur": 8,
+            "shadow_spread": -9,
+            "shadow_color": "rgba(0, 0, 0, 0.1)",
+            "shadow_hover_horizontal": 0,
+            "shadow_hover_vertical": 4,
+            "shadow_hover_blur": 16,
+            "shadow_hover_spread": 0,
+            "shadow_hover_color": "rgba(0, 0, 0, 0.15)",
+            "input_label": "Your personalization text",
+            "property_name": "Personalization",
+            "placeholder_text": "Enter your custom text here. Press Enter for new lines.",
+            "font_label": "Choose font",
+            "font_property_name": "Font",
+            "greek_fonts_link_text": "Greek Fonts",
+            "greek_fonts_link_color": "#1f9393",
+            "file_label": "Upload file",
+            "file_property_name": "Uploaded File",
+            "file_accept": "image/*,.pdf",
+            "footnote_text": "The personalization preview is not accurate and should be used only for a general idea of the engraving, as it is a simulation that will not look exactly like the final product.",
+            "footnote_size": 11,
+            "footnote_color": "#666666",
+            "label_color": "#000000",
+            "input_border_color": "#cccccc",
+            "input_focus_color": "#1f9393",
+            "input_border_radius": 6,
+            "preview_text_size": 20,
+            "preview_text_color": "#ffffff",
+            "mockup_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8ccd9aa_rVd9LY"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "17624431679ac0b9af": {
       "type": "_blocks",
       "blocks": {
@@ -419,6 +476,7 @@
     }
   },
   "order": [
+    "17624613889b3841c3",
     "17624431679ac0b9af",
     "8b876c32-b5c2-401f-9f7b-24ea70f8194d",
     "main",
