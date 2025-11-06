@@ -1,6 +1,496 @@
+{% doc %}
+  @prompt
+    "Create a new product section block named 'Live Personalization Preview.' The entire section must be contained within an element for a collapsible row, with the summary text being 'Customize Your Product Here.'
+    1. Input Form Field and Data Persistence: Include a required, multi-line <textarea> input field for customer personalization. This text box must function as a line item property named properties to ensure data persistence to the cart. Set the field height to 5 rows and include a descriptive placeholder text. Crucially, the customer must be able to press enter to create new lines of text.
+    2. Mockup Display and Data Sourcing: Position a product mockup display adjacent to the input field on desktop (and stacked on mobile) using appropriate responsive HTML/CSS structure. The image source for this mockup must be dynamically pulled from the product's metafield using the namespace custom and key mockup_image (Liquid syntax: product.metafields.custom.mockup_image). Use the Liquid image_url filter and include a necessary Liquid conditional check (if) and fallback if the metafield is empty.
+    3. Text Overlay and Centering: Create a dynamically updated text overlay positioned absolutely over the entire area of the mockup image. This overlay must display the text entered by the customer in the textarea. The text overlay must be styled using CSS Flexbox properties (display: flex, align-items: center, justify-content: center) to achieve perfect horizontal and vertical centering over the image. The text within the overlay must also use text-align: center and must wrap lines appropriately.
+    4. CSS Optimizations: Ensure the preview text overlay container uses the CSS properties white-space: pre-line and appropriate sizing/color settings for legibility against the mockup image., 5. Create an option for the customer to choose a font for the personalisation. The fonts are the following “Helvetica, New York, Abril Fatface, Anton, Archivo Black, Arial, Bagel Fat One, BEBAS NEUE, Caprasimo, Caveat, Chakra Petch, Courier New, DM Serif Text, Funnel Display, Gluten, Josefin Sans, Kaushan Script, Lobster Two, Nothing You Could Do, Pinyon Script”.
+    6. Create an option for the customer to upload a file as a property for the input field., The input text for personalisation and the display it on the mockup picture is not working right
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-live-preview-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-live-preview-details-{{ ai_gen_id }} {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  .ai-live-preview-summary-{{ ai_gen_id }} {
+    padding: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none;
+    user-select: none;
+  }
+
+  .ai-live-preview-summary-{{ ai_gen_id }}::-webkit-details-marker {
+    display: none;
+  }
+
+  .ai-live-preview-content-{{ ai_gen_id }} {
+    padding: 0 16px 16px;
+  }
+
+  .ai-live-preview-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-live-preview-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ai-live-preview-input-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-live-preview-field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-live-preview-label-{{ ai_gen_id }} {
+    font-weight: 500;
+    font-size: 14px;
+    color: {{ block.settings.label_color }};
+  }
+
+  .ai-live-preview-textarea-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .ai-live-preview-textarea-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.input_focus_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-live-preview-select-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .ai-live-preview-select-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.input_focus_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-live-preview-file-input-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .ai-live-preview-file-input-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.input_focus_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-live-preview-mockup-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f5f5f5;
+    border-radius: {{ block.settings.mockup_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-live-preview-mockup-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-live-preview-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+  }
+
+  .ai-live-preview-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-live-preview-text-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    pointer-events: none;
+  }
+
+  .ai-live-preview-text-display-{{ ai_gen_id }} {
+    font-size: {{ block.settings.preview_text_size }}px;
+    color: {{ block.settings.preview_text_color }};
+    text-align: center;
+    white-space: pre-line;
+    word-wrap: break-word;
+    max-width: 100%;
+    font-family: Helvetica, sans-serif;
+  }
+
+  .ai-live-preview-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+<live-preview-{{ ai_gen_id }} class="ai-live-preview-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <details class="ai-live-preview-details-{{ ai_gen_id }}" open>
+    <summary class="ai-live-preview-summary-{{ ai_gen_id }}">
+      {{ block.settings.summary_text }}
+    </summary>
+    <div class="ai-live-preview-content-{{ ai_gen_id }}">
+      <div class="ai-live-preview-container-{{ ai_gen_id }}">
+        <div class="ai-live-preview-input-wrapper-{{ ai_gen_id }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id }}">
+            <label for="ai-live-preview-input-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+              {{ block.settings.input_label }}
+            </label>
+            <textarea
+              id="ai-live-preview-input-{{ ai_gen_id }}"
+              name="properties[{{ block.settings.property_name }}]"
+              class="ai-live-preview-textarea-{{ ai_gen_id }}"
+              rows="5"
+              placeholder="{{ block.settings.placeholder_text }}"
+              required
+            ></textarea>
+          </div>
+
+          <div class="ai-live-preview-field-{{ ai_gen_id }}">
+            <label for="ai-live-preview-font-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+              {{ block.settings.font_label }}
+            </label>
+            <select
+              id="ai-live-preview-font-{{ ai_gen_id }}"
+              name="properties[{{ block.settings.font_property_name }}]"
+              class="ai-live-preview-select-{{ ai_gen_id }}"
+            >
+              <option value="Helvetica" style="font-family: Helvetica, sans-serif;">Helvetica</option>
+              <option value="New York" style="font-family: 'New York', serif;">New York</option>
+              <option value="Abril Fatface" style="font-family: 'Abril Fatface', serif;">Abril Fatface</option>
+              <option value="Anton" style="font-family: 'Anton', sans-serif;">Anton</option>
+              <option value="Archivo Black" style="font-family: 'Archivo Black', sans-serif;">Archivo Black</option>
+              <option value="Arial" style="font-family: Arial, sans-serif;">Arial</option>
+              <option value="Bagel Fat One" style="font-family: 'Bagel Fat One', cursive;">Bagel Fat One</option>
+              <option value="BEBAS NEUE" style="font-family: 'BEBAS NEUE', sans-serif;">BEBAS NEUE</option>
+              <option value="Caprasimo" style="font-family: 'Caprasimo', cursive;">Caprasimo</option>
+              <option value="Caveat" style="font-family: 'Caveat', cursive;">Caveat</option>
+              <option value="Chakra Petch" style="font-family: 'Chakra Petch', sans-serif;">Chakra Petch</option>
+              <option value="Courier New" style="font-family: 'Courier New', monospace;">Courier New</option>
+              <option value="DM Serif Text" style="font-family: 'DM Serif Text', serif;">DM Serif Text</option>
+              <option value="Funnel Display" style="font-family: 'Funnel Display', sans-serif;">Funnel Display</option>
+              <option value="Gluten" style="font-family: 'Gluten', cursive;">Gluten</option>
+              <option value="Josefin Sans" style="font-family: 'Josefin Sans', sans-serif;">Josefin Sans</option>
+              <option value="Kaushan Script" style="font-family: 'Kaushan Script', cursive;">Kaushan Script</option>
+              <option value="Lobster Two" style="font-family: 'Lobster Two', cursive;">Lobster Two</option>
+              <option value="Nothing You Could Do" style="font-family: 'Nothing You Could Do', cursive;">Nothing You Could Do</option>
+              <option value="Pinyon Script" style="font-family: 'Pinyon Script', cursive;">Pinyon Script</option>
+            </select>
+          </div>
+
+          <div class="ai-live-preview-field-{{ ai_gen_id }}">
+            <label for="ai-live-preview-file-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+              {{ block.settings.file_label }}
+            </label>
+            <input
+              type="file"
+              id="ai-live-preview-file-{{ ai_gen_id }}"
+              name="properties[{{ block.settings.file_property_name }}]"
+              class="ai-live-preview-file-input-{{ ai_gen_id }}"
+              accept="{{ block.settings.file_accept }}"
+            >
+          </div>
+        </div>
+
+        <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id }}">
+          {% if product.metafields.custom.mockup_image %}
+            <img
+              src="{{ product.metafields.custom.mockup_image | image_url: width: 800 }}"
+              alt="{{ product.title }} mockup"
+              class="ai-live-preview-mockup-image-{{ ai_gen_id }}"
+              loading="lazy"
+              width="800"
+              height="800"
+            >
+          {% else %}
+            <div class="ai-live-preview-placeholder-{{ ai_gen_id }}">
+              {{ 'product-1' | placeholder_svg_tag }}
+            </div>
+            <div class="ai-live-preview-empty-state-{{ ai_gen_id }}">
+              Add a mockup image to the product metafield (custom.mockup_image)
+            </div>
+          {% endif %}
+
+          <div class="ai-live-preview-text-overlay-{{ ai_gen_id }}">
+            <div
+              id="ai-live-preview-text-{{ ai_gen_id }}"
+              class="ai-live-preview-text-display-{{ ai_gen_id }}"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</live-preview-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class LivePreview{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.textarea = null;
+        this.fontSelector = null;
+        this.previewText = null;
+      }
+
+      connectedCallback() {
+        this.textarea = this.querySelector('#ai-live-preview-input-{{ ai_gen_id }}');
+        this.fontSelector = this.querySelector('#ai-live-preview-font-{{ ai_gen_id }}');
+        this.previewText = this.querySelector('#ai-live-preview-text-{{ ai_gen_id }}');
+
+        if (this.textarea && this.previewText) {
+          this.textarea.addEventListener('input', (e) => this.updatePreview(e));
+        }
+
+        if (this.fontSelector && this.previewText) {
+          this.fontSelector.addEventListener('change', () => this.updateFont());
+          this.updateFont();
+        }
+      }
+
+      updatePreview(event) {
+        if (this.previewText) {
+          this.previewText.textContent = event.target.value;
+        }
+      }
+
+      updateFont() {
+        if (!this.fontSelector || !this.previewText) return;
+
+        const selectedFont = this.fontSelector.value;
+        const fontFamilyMap = {
+          'Helvetica': 'Helvetica, sans-serif',
+          'New York': "'New York', serif",
+          'Abril Fatface': "'Abril Fatface', serif",
+          'Anton': "'Anton', sans-serif",
+          'Archivo Black': "'Archivo Black', sans-serif",
+          'Arial': 'Arial, sans-serif',
+          'Bagel Fat One': "'Bagel Fat One', cursive",
+          'BEBAS NEUE': "'BEBAS NEUE', sans-serif",
+          'Caprasimo': "'Caprasimo', cursive",
+          'Caveat': "'Caveat', cursive",
+          'Chakra Petch': "'Chakra Petch', sans-serif",
+          'Courier New': "'Courier New', monospace",
+          'DM Serif Text': "'DM Serif Text', serif",
+          'Funnel Display': "'Funnel Display', sans-serif",
+          'Gluten': "'Gluten', cursive",
+          'Josefin Sans': "'Josefin Sans', sans-serif",
+          'Kaushan Script': "'Kaushan Script', cursive",
+          'Lobster Two': "'Lobster Two', cursive",
+          'Nothing You Could Do': "'Nothing You Could Do', cursive",
+          'Pinyon Script': "'Pinyon Script', cursive"
+        };
+
+        this.previewText.style.fontFamily = fontFamilyMap[selectedFont] || 'Helvetica, sans-serif';
+      }
+    }
+
+    customElements.define('live-preview-{{ ai_gen_id }}', LivePreview{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Live preview",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collapsible section"
+    },
+    {
+      "type": "text",
+      "id": "summary_text",
+      "label": "Summary text",
+      "default": "Customize Your Product Here"
+    },
+    {
+      "type": "header",
+      "content": "Text input"
+    },
+    {
+      "type": "text",
+      "id": "input_label",
+      "label": "Text label",
+      "default": "Your personalization text"
+    },
+    {
+      "type": "text",
+      "id": "property_name",
+      "label": "Text property name",
+      "default": "Personalization"
+    },
+    {
+      "type": "textarea",
+      "id": "placeholder_text",
+      "label": "Placeholder text",
+      "default": "Enter your custom text here. Press Enter for new lines."
+    },
+    {
+      "type": "header",
+      "content": "Font selector"
+    },
+    {
+      "type": "text",
+      "id": "font_label",
+      "label": "Font label",
+      "default": "Choose font"
+    },
+    {
+      "type": "text",
+      "id": "font_property_name",
+      "label": "Font property name",
+      "default": "Font"
+    },
+    {
+      "type": "header",
+      "content": "File upload"
+    },
+    {
+      "type": "text",
+      "id": "file_label",
+      "label": "File label",
+      "default": "Upload file"
+    },
+    {
+      "type": "text",
+      "id": "file_property_name",
+      "label": "File property name",
+      "default": "Uploaded File"
+    },
+    {
+      "type": "text",
+      "id": "file_accept",
+      "label": "Accepted file types",
+      "default": "image/*,.pdf"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_color",
+      "label": "Input focus color",
+      "default": "#1f9393"
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Input border radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Preview display"
+    },
+    {
+      "type": "range",
+      "id": "preview_text_size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Preview text size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "preview_text_color",
+      "label": "Preview text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "mockup_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Mockup border radius",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Live preview"
+    }
+  ]
+}
 {% endschema %}
