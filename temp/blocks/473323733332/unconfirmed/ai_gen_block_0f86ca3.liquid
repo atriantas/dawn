@@ -1,6 +1,496 @@
+{% doc %}
+  @prompt
+    Create a product customization text box that the costumer can write a personalized text. So the product page template will includes custom form fields, or line item properties. The text can be displayed at a mockup picture that it would be defined by product metadata.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-customization-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-product-customization__preview-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    max-width: {{ block.settings.preview_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-product-customization__preview-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-product-customization__preview-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-product-customization__preview-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-product-customization__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-product-customization__preview-text-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.text_position_y }}%;
+    left: {{ block.settings.text_position_x }}%;
+    transform: translate(-50%, -50%);
+    font-size: {{ block.settings.preview_font_size }}px;
+    color: {{ block.settings.preview_text_color }};
+    font-weight: {{ block.settings.preview_font_weight }};
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: {{ block.settings.preview_font.family }}, {{ block.settings.preview_font.fallback_families }};
+    font-style: {{ block.settings.preview_font.style }};
+  }
+
+  .ai-product-customization__form-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-product-customization__heading-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-product-customization__description-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .ai-product-customization__field-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-product-customization__label-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-product-customization__input-{{ ai_gen_id }} {
+    padding: 12px 16px;
+    border: 1px solid {{ block.settings.input_border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ai-product-customization__input-{{ ai_gen_id }}:focus {
+    outline: 2px solid {{ block.settings.input_focus_color }};
+    outline-offset: 2px;
+  }
+
+  .ai-product-customization__char-count-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.6;
+    text-align: right;
+  }
+
+  .ai-product-customization__char-count-{{ ai_gen_id }}.over-limit {
+    color: #d82c0d;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-product-customization-{{ ai_gen_id }} {
+      padding: 16px;
+      gap: 16px;
+    }
+
+    .ai-product-customization__preview-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.preview_font_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<product-customization-{{ ai_gen_id }}
+  class="ai-product-customization-{{ ai_gen_id }}"
+  data-max-length="{{ block.settings.max_characters }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-product-customization__preview-{{ ai_gen_id }}">
+    {% if product.metafields.custom.mockup_image %}
+      <img
+        src="{{ product.metafields.custom.mockup_image | image_url: width: 1000 }}"
+        alt="Product mockup"
+        class="ai-product-customization__preview-image-{{ ai_gen_id }}"
+        loading="lazy"
+      >
+    {% else %}
+      <div class="ai-product-customization__preview-placeholder-{{ ai_gen_id }}">
+        {{ 'product-1' | placeholder_svg_tag }}
+        <div class="ai-product-customization__empty-state-{{ ai_gen_id }}">
+          Add a mockup image via product metafield: custom.mockup_image
+        </div>
+      </div>
+    {% endif %}
+    <div
+      class="ai-product-customization__preview-text-{{ ai_gen_id }}"
+      data-preview-text
+    >
+      {{ block.settings.preview_placeholder }}
+    </div>
+  </div>
+
+  <div class="ai-product-customization__form-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h3 class="ai-product-customization__heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h3>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <p class="ai-product-customization__description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </p>
+    {% endif %}
+
+    <div class="ai-product-customization__field-{{ ai_gen_id }}">
+      <label
+        for="customization-text-{{ ai_gen_id }}"
+        class="ai-product-customization__label-{{ ai_gen_id }}"
+      >
+        {{ block.settings.field_label }}
+        {% if block.settings.required %}
+          <span aria-label="required">*</span>
+        {% endif %}
+      </label>
+      <input
+        type="text"
+        id="customization-text-{{ ai_gen_id }}"
+        name="properties[{{ block.settings.property_name }}]"
+        class="ai-product-customization__input-{{ ai_gen_id }}"
+        placeholder="{{ block.settings.input_placeholder }}"
+        maxlength="{{ block.settings.max_characters }}"
+        {% if block.settings.required %}required{% endif %}
+        data-customization-input
+      >
+      {% if block.settings.show_character_count %}
+        <div class="ai-product-customization__char-count-{{ ai_gen_id }}" data-char-count>
+          <span data-current-count>0</span> / {{ block.settings.max_characters }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</product-customization-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductCustomization{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.input = this.querySelector('[data-customization-input]');
+        this.previewText = this.querySelector('[data-preview-text]');
+        this.charCount = this.querySelector('[data-char-count]');
+        this.currentCount = this.querySelector('[data-current-count]');
+        this.maxLength = parseInt(this.dataset.maxLength);
+      }
+
+      connectedCallback() {
+        if (this.input) {
+          this.input.addEventListener('input', this.handleInput.bind(this));
+        }
+      }
+
+      handleInput(event) {
+        const value = event.target.value;
+        
+        if (this.previewText) {
+          this.previewText.textContent = value || this.previewText.dataset.placeholder || '';
+        }
+
+        if (this.charCount && this.currentCount) {
+          this.currentCount.textContent = value.length;
+          
+          if (value.length > this.maxLength) {
+            this.charCount.classList.add('over-limit');
+          } else {
+            this.charCount.classList.remove('over-limit');
+          }
+        }
+      }
+    }
+
+    customElements.define('product-customization-{{ ai_gen_id }}', ProductCustomization{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product customization",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Personalize your product"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 20
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Add your custom text to make this product uniquely yours."
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Input field"
+    },
+    {
+      "type": "text",
+      "id": "field_label",
+      "label": "Field label",
+      "default": "Your custom text"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Input placeholder",
+      "default": "Enter your text here"
+    },
+    {
+      "type": "text",
+      "id": "property_name",
+      "label": "Property name",
+      "default": "Personalization",
+      "info": "This is the name that will appear in the order details"
+    },
+    {
+      "type": "checkbox",
+      "id": "required",
+      "label": "Make field required",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "max_characters",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "label": "Maximum characters",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "show_character_count",
+      "label": "Show character count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Preview"
+    },
+    {
+      "type": "text",
+      "id": "preview_placeholder",
+      "label": "Preview placeholder text",
+      "default": "Your text here",
+      "info": "Text shown before customer enters their customization"
+    },
+    {
+      "type": "range",
+      "id": "preview_max_width",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Preview maximum width",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "text_position_x",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Text horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "text_position_y",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Text vertical position",
+      "default": 50
+    },
+    {
+      "type": "font_picker",
+      "id": "preview_font",
+      "label": "Preview font",
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "preview_font_size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Preview font size",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "preview_font_weight",
+      "label": "Preview font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "preview_text_color",
+      "label": "Preview text color",
+      "default": "#3f3631"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "input_focus_color",
+      "label": "Input focus color",
+      "default": "#1f9393"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Container border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Input border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product customization"
+    }
+  ]
+}
 {% endschema %}
