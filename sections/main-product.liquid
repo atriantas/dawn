@@ -105,6 +105,8 @@
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
+              {%- when 'live_mockup' -%}
+              {% render 'personalisation-row', block: block %}
               {%- when 'personalise' -%}
                 {% if block.settings.personalise %}
                   <div>
@@ -291,8 +293,6 @@
                     </div>
                   </details>
                 </div>
-                {%- when 'live_mockup' -%}
-              {% render 'personalisation-row', block: block %}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
