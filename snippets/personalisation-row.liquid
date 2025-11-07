@@ -1,4 +1,4 @@
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% assign ai_gen_id_2 = block.id | replace: '_', '' | downcase %}
 
 {% liquid
   assign product_color = product.metafields.custom.color | downcase
@@ -10,11 +10,11 @@
 %}
 
 {% style %}
-  .ai-live-preview-{{ ai_gen_id }} {
+  .ai-live-preview-{{ ai_gen_id_2_2 }} {
     width: 100%;
   }
 
-  .ai-live-preview-details-{{ ai_gen_id }} {
+  .ai-live-preview-details-{{ ai_gen_id_2 }} {
     border: {{ block.settings.collapsible_border_thickness }}px solid {{ block.settings.collapsible_border_color }};
     border-radius: {{ block.settings.collapsible_border_radius }}px;
     background-color: {{ block.settings.collapsible_background_color }};
@@ -23,13 +23,13 @@
     box-shadow: {{ block.settings.shadow_horizontal }}px {{ block.settings.shadow_vertical }}px {{ block.settings.shadow_blur }}px {{ block.settings.shadow_spread }}px {{ block.settings.shadow_color }};
   }
 
-  .ai-live-preview-details-{{ ai_gen_id }}:hover {
+  .ai-live-preview-details-{{ ai_gen_id_2 }}:hover {
     background-color: {{ block.settings.collapsible_hover_background_color }};
     border-color: {{ block.settings.collapsible_hover_border_color }};
     box-shadow: {{ block.settings.shadow_hover_horizontal }}px {{ block.settings.shadow_hover_vertical }}px {{ block.settings.shadow_hover_blur }}px {{ block.settings.shadow_hover_spread }}px {{ block.settings.shadow_hover_color }};
   }
 
-  .ai-live-preview-summary-{{ ai_gen_id }} {
+  .ai-live-preview-summary-{{ ai_gen_id_2 }} {
     padding: 16px;
     cursor: pointer;
     font-weight: 600;
@@ -43,15 +43,15 @@
     transition: color 0.3s ease;
   }
 
-  .ai-live-preview-details-{{ ai_gen_id }}:hover .ai-live-preview-summary-{{ ai_gen_id }} {
+  .ai-live-preview-details-{{ ai_gen_id_2 }}:hover .ai-live-preview-summary-{{ ai_gen_id_2 }} {
     color: {{ block.settings.collapsible_hover_text_color }};
   }
 
-  .ai-live-preview-summary-{{ ai_gen_id }}::-webkit-details-marker {
+  .ai-live-preview-summary-{{ ai_gen_id_2 }}::-webkit-details-marker {
     display: none;
   }
 
-  .ai-live-preview-arrow-{{ ai_gen_id }} {
+  .ai-live-preview-arrow-{{ ai_gen_id_2 }} {
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
@@ -59,55 +59,55 @@
     margin-left: 12px;
   }
 
-  .ai-live-preview-arrow-{{ ai_gen_id }} svg {
+  .ai-live-preview-arrow-{{ ai_gen_id_2 }} svg {
     width: 100%;
     height: 100%;
     stroke: {{ block.settings.arrow_color }};
   }
 
-  .ai-live-preview-details-{{ ai_gen_id }}:hover .ai-live-preview-arrow-{{ ai_gen_id }} svg {
+  .ai-live-preview-details-{{ ai_gen_id_2 }}:hover .ai-live-preview-arrow-{{ ai_gen_id_2 }} svg {
     stroke: {{ block.settings.arrow_hover_color }};
   }
 
-  .ai-live-preview-details-{{ ai_gen_id }}[open] .ai-live-preview-arrow-{{ ai_gen_id }} {
+  .ai-live-preview-details-{{ ai_gen_id_2 }}[open] .ai-live-preview-arrow-{{ ai_gen_id_2 }} {
     transform: rotate(180deg);
   }
 
-  .ai-live-preview-content-{{ ai_gen_id }} {
+  .ai-live-preview-content-{{ ai_gen_id_2 }} {
     padding: 0 16px 16px;
   }
 
-  .ai-live-preview-container-{{ ai_gen_id }} {
+  .ai-live-preview-container-{{ ai_gen_id_2 }} {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
   @media screen and (min-width: 750px) {
-    .ai-live-preview-container-{{ ai_gen_id }} {
+    .ai-live-preview-container-{{ ai_gen_id_2 }} {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  .ai-live-preview-input-wrapper-{{ ai_gen_id }} {
+  .ai-live-preview-input-wrapper-{{ ai_gen_id_2 }} {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .ai-live-preview-field-{{ ai_gen_id }} {
+  .ai-live-preview-field-{{ ai_gen_id_2 }} {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
-  .ai-live-preview-label-{{ ai_gen_id }} {
+  .ai-live-preview-label-{{ ai_gen_id_2 }} {
     font-weight: 500;
     font-size: 14px;
     color: {{ block.settings.label_color }};
   }
 
-  .ai-live-preview-textarea-{{ ai_gen_id }} {
+  .ai-live-preview-textarea-{{ ai_gen_id_2 }} {
     width: 100%;
     padding: 12px;
     border: 1px solid {{ block.settings.input_border_color }};
@@ -118,12 +118,12 @@
     min-height: 120px;
   }
 
-  .ai-live-preview-textarea-{{ ai_gen_id }}:focus {
+  .ai-live-preview-textarea-{{ ai_gen_id_2 }}:focus {
     outline: 2px solid {{ block.settings.input_focus_color }};
     outline-offset: 2px;
   }
 
-  .ai-live-preview-select-{{ ai_gen_id }} {
+  .ai-live-preview-select-{{ ai_gen_id_2 }} {
     width: 100%;
     padding: 12px;
     border: 1px solid {{ block.settings.input_border_color }};
@@ -134,12 +134,12 @@
     cursor: pointer;
   }
 
-  .ai-live-preview-select-{{ ai_gen_id }}:focus {
+  .ai-live-preview-select-{{ ai_gen_id_2 }}:focus {
     outline: 2px solid {{ block.settings.input_focus_color }};
     outline-offset: 2px;
   }
 
-  .ai-live-preview-file-input-{{ ai_gen_id }} {
+  .ai-live-preview-file-input-{{ ai_gen_id_2 }} {
     width: 100%;
     padding: 12px;
     border: 1px solid {{ block.settings.input_border_color }};
@@ -150,12 +150,12 @@
     cursor: pointer;
   }
 
-  .ai-live-preview-file-input-{{ ai_gen_id }}:focus {
+  .ai-live-preview-file-input-{{ ai_gen_id_2 }}:focus {
     outline: 2px solid {{ block.settings.input_focus_color }};
     outline-offset: 2px;
   }
 
-  .ai-live-preview-greek-fonts-link-{{ ai_gen_id }} {
+  .ai-live-preview-greek-fonts-link-{{ ai_gen_id_2 }} {
     display: inline-block;
     color: {{ block.settings.greek_fonts_link_color }};
     text-decoration: underline;
@@ -164,11 +164,11 @@
     margin-top: 4px;
   }
 
-  .ai-live-preview-greek-fonts-link-{{ ai_gen_id }}:hover {
+  .ai-live-preview-greek-fonts-link-{{ ai_gen_id_2 }}:hover {
     opacity: 0.8;
   }
 
-  .ai-live-preview-modal-{{ ai_gen_id }} {
+  .ai-live-preview-modal-{{ ai_gen_id_2 }} {
     display: none;
     position: fixed;
     top: 0;
@@ -182,11 +182,11 @@
     padding: 20px;
   }
 
-  .ai-live-preview-modal-{{ ai_gen_id }}.active {
+  .ai-live-preview-modal-{{ ai_gen_id_2 }}.active {
     display: flex;
   }
 
-  .ai-live-preview-modal-content-{{ ai_gen_id }} {
+  .ai-live-preview-modal-content-{{ ai_gen_id_2 }} {
     position: relative;
     max-width: 90%;
     max-height: 90%;
@@ -196,7 +196,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
-  .ai-live-preview-modal-close-{{ ai_gen_id }} {
+  .ai-live-preview-modal-close-{{ ai_gen_id_2 }} {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -215,18 +215,18 @@
     z-index: 1;
   }
 
-  .ai-live-preview-modal-close-{{ ai_gen_id }}:hover {
+  .ai-live-preview-modal-close-{{ ai_gen_id_2 }}:hover {
     background: #333333;
   }
 
-  .ai-live-preview-modal-image-{{ ai_gen_id }} {
+  .ai-live-preview-modal-image-{{ ai_gen_id_2 }} {
     max-width: 100%;
     max-height: 80vh;
     display: block;
     margin: 0 auto;
   }
 
-  .ai-live-preview-modal-placeholder-{{ ai_gen_id }} {
+  .ai-live-preview-modal-placeholder-{{ ai_gen_id_2 }} {
     width: 100%;
     max-width: 600px;
     aspect-ratio: 16 / 9;
@@ -237,19 +237,19 @@
     border-radius: 4px;
   }
 
-  .ai-live-preview-modal-placeholder-{{ ai_gen_id }} svg {
+  .ai-live-preview-modal-placeholder-{{ ai_gen_id_2 }} svg {
     width: 40%;
     height: 40%;
     opacity: 0.3;
   }
 
-  .ai-live-preview-mockup-section-{{ ai_gen_id }} {
+  .ai-live-preview-mockup-section-{{ ai_gen_id_2 }} {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  .ai-live-preview-mockup-wrapper-{{ ai_gen_id }} {
+  .ai-live-preview-mockup-wrapper-{{ ai_gen_id_2 }} {
     position: relative;
     width: 100%;
     aspect-ratio: 1;
@@ -258,14 +258,14 @@
     overflow: hidden;
   }
 
-  .ai-live-preview-mockup-image-{{ ai_gen_id }} {
+  .ai-live-preview-mockup-image-{{ ai_gen_id_2 }} {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .ai-live-preview-placeholder-{{ ai_gen_id }} {
+  .ai-live-preview-placeholder-{{ ai_gen_id_2 }} {
     width: 100%;
     height: 100%;
     display: flex;
@@ -274,13 +274,13 @@
     background-color: #f5f5f5;
   }
 
-  .ai-live-preview-placeholder-{{ ai_gen_id }} svg {
+  .ai-live-preview-placeholder-{{ ai_gen_id_2 }} svg {
     width: 60%;
     height: 60%;
     opacity: 0.3;
   }
 
-  .ai-live-preview-text-overlay-{{ ai_gen_id }} {
+  .ai-live-preview-text-overlay-{{ ai_gen_id_2 }} {
     position: absolute;
     top: 0;
     left: 0;
@@ -293,7 +293,7 @@
     pointer-events: none;
   }
 
-  .ai-live-preview-text-display-{{ ai_gen_id }} {
+  .ai-live-preview-text-display-{{ ai_gen_id_2 }} {
     font-size: {{ block.settings.preview_text_size }}px;
     color: {{ text_color }};
     text-align: center;
@@ -303,7 +303,7 @@
     font-family: Helvetica, sans-serif;
   }
 
-  .ai-live-preview-empty-state-{{ ai_gen_id }} {
+  .ai-live-preview-empty-state-{{ ai_gen_id_2 }} {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -317,7 +317,7 @@
     pointer-events: none;
   }
 
-  .ai-live-preview-footnote-{{ ai_gen_id }} {
+  .ai-live-preview-footnote-{{ ai_gen_id_2 }} {
     font-size: {{ block.settings.footnote_size }}px;
     color: {{ block.settings.footnote_color }};
     line-height: 1.4;
@@ -325,41 +325,41 @@
   }
 {% endstyle %}
 
-<live-preview-{{ ai_gen_id }} class="ai-live-preview-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <details class="ai-live-preview-details-{{ ai_gen_id }}" open>
-    <summary class="ai-live-preview-summary-{{ ai_gen_id }}">
+<live-preview-{{ ai_gen_id_2 }} class="ai-live-preview-{{ ai_gen_id_2 }}" {{ block.shopify_attributes }}>
+  <details class="ai-live-preview-details-{{ ai_gen_id_2 }}" open>
+    <summary class="ai-live-preview-summary-{{ ai_gen_id_2 }}">
       <span>{{ block.settings.summary_text }}</span>
-      <span class="ai-live-preview-arrow-{{ ai_gen_id }}">
+      <span class="ai-live-preview-arrow-{{ ai_gen_id_2 }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </span>
     </summary>
-    <div class="ai-live-preview-content-{{ ai_gen_id }}">
-      <div class="ai-live-preview-container-{{ ai_gen_id }}">
-        <div class="ai-live-preview-input-wrapper-{{ ai_gen_id }}">
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-input-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+    <div class="ai-live-preview-content-{{ ai_gen_id_2 }}">
+      <div class="ai-live-preview-container-{{ ai_gen_id_2 }}">
+        <div class="ai-live-preview-input-wrapper-{{ ai_gen_id_2 }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-input-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.input_label }}
             </label>
             <textarea
-              id="ai-live-preview-input-{{ ai_gen_id }}"
+              id="ai-live-preview-input-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.property_name }}]"
-              class="ai-live-preview-textarea-{{ ai_gen_id }}"
+              class="ai-live-preview-textarea-{{ ai_gen_id_2 }}"
               rows="5"
               placeholder="{{ block.settings.placeholder_text }}"
               required
             ></textarea>
           </div>
 
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-font-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-font-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.font_label }}
             </label>
             <select
-              id="ai-live-preview-font-{{ ai_gen_id }}"
+              id="ai-live-preview-font-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.font_property_name }}]"
-              class="ai-live-preview-select-{{ ai_gen_id }}"
+              class="ai-live-preview-select-{{ ai_gen_id_2 }}"
             >
               <option value="Helvetica" style="font-family: Helvetica, sans-serif;">1. Helvetica</option>
               <option value="New York" style="font-family: 'New York', serif;">2. New York</option>
@@ -382,54 +382,54 @@
               <option value="Nothing You Could Do" style="font-family: 'Nothing You Could Do', cursive;">19. Nothing You Could Do</option>
               <option value="Pinyon Script" style="font-family: 'Pinyon Script', cursive;">20. Pinyon Script</option>
             </select>
-            <a class="ai-live-preview-greek-fonts-link-{{ ai_gen_id }}" data-greek-fonts-trigger>
+            <a class="ai-live-preview-greek-fonts-link-{{ ai_gen_id_2 }}" data-greek-fonts-trigger>
               {{ block.settings.greek_fonts_link_text }}
             </a>
           </div>
 
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-file-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-file-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.file_label }}
             </label>
             <input
               type="file"
-              id="ai-live-preview-file-{{ ai_gen_id }}"
+              id="ai-live-preview-file-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.file_property_name }}]"
-              class="ai-live-preview-file-input-{{ ai_gen_id }}"
+              class="ai-live-preview-file-input-{{ ai_gen_id_2 }}"
               accept="{{ block.settings.file_accept }}"
             >
           </div>
         </div>
 
-        <div class="ai-live-preview-mockup-section-{{ ai_gen_id }}">
-          <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id }}">
+        <div class="ai-live-preview-mockup-section-{{ ai_gen_id_2 }}">
+          <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id_2 }}">
             {% if product.metafields.custom.mockup_image %}
               <img
                 src="{{ product.metafields.custom.mockup_image | image_url: width: 800 }}"
                 alt="{{ product.title }} mockup"
-                class="ai-live-preview-mockup-image-{{ ai_gen_id }}"
+                class="ai-live-preview-mockup-image-{{ ai_gen_id_2 }}"
                 loading="lazy"
                 width="800"
                 height="800"
               >
             {% else %}
-              <div class="ai-live-preview-placeholder-{{ ai_gen_id }}">
+              <div class="ai-live-preview-placeholder-{{ ai_gen_id_2 }}">
                 {{ 'product-1' | placeholder_svg_tag }}
               </div>
-              <div class="ai-live-preview-empty-state-{{ ai_gen_id }}">
+              <div class="ai-live-preview-empty-state-{{ ai_gen_id_2 }}">
                 Add a mockup image to the product metafield (custom.mockup_image)
               </div>
             {% endif %}
 
-            <div class="ai-live-preview-text-overlay-{{ ai_gen_id }}">
+            <div class="ai-live-preview-text-overlay-{{ ai_gen_id_2 }}">
               <div
-                id="ai-live-preview-text-{{ ai_gen_id }}"
-                class="ai-live-preview-text-display-{{ ai_gen_id }}"
+                id="ai-live-preview-text-{{ ai_gen_id_2 }}"
+                class="ai-live-preview-text-display-{{ ai_gen_id_2 }}"
               ></div>
             </div>
           </div>
 
-          <p class="ai-live-preview-footnote-{{ ai_gen_id }}">
+          <p class="ai-live-preview-footnote-{{ ai_gen_id_2 }}">
             {{ block.settings.footnote_text }}
           </p>
         </div>
@@ -437,28 +437,28 @@
     </div>
   </details>
 
-  <div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
-    <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
-      <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
+  <div class="ai-live-preview-modal-{{ ai_gen_id_2 }}" data-greek-fonts-modal>
+    <div class="ai-live-preview-modal-content-{{ ai_gen_id_2 }}">
+      <button class="ai-live-preview-modal-close-{{ ai_gen_id_2 }}" data-modal-close aria-label="Close">×</button>
       {% if block.settings.greek_fonts_image %}
         <img
           src="{{ block.settings.greek_fonts_image | image_url: width: 1200 }}"
           alt="Greek Fonts"
-          class="ai-live-preview-modal-image-{{ ai_gen_id }}"
+          class="ai-live-preview-modal-image-{{ ai_gen_id_2 }}"
           loading="lazy"
         >
       {% else %}
-        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id }}">
+        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id_2 }}">
           {{ 'image' | placeholder_svg_tag }}
         </div>
       {% endif %}
     </div>
   </div>
-</live-preview-{{ ai_gen_id }}>
+</live-preview-{{ ai_gen_id_2 }}>
 
 <script>
   (function() {
-    class LivePreview{{ ai_gen_id }} extends HTMLElement {
+    class LivePreview{{ ai_gen_id_2 }} extends HTMLElement {
       constructor() {
         super();
         this.textarea = null;
@@ -470,9 +470,9 @@
       }
 
       connectedCallback() {
-        this.textarea = this.querySelector('#ai-live-preview-input-{{ ai_gen_id }}');
-        this.fontSelector = this.querySelector('#ai-live-preview-font-{{ ai_gen_id }}');
-        this.previewText = this.querySelector('#ai-live-preview-text-{{ ai_gen_id }}');
+        this.textarea = this.querySelector('#ai-live-preview-input-{{ ai_gen_id_2 }}');
+        this.fontSelector = this.querySelector('#ai-live-preview-font-{{ ai_gen_id_2 }}');
+        this.previewText = this.querySelector('#ai-live-preview-text-{{ ai_gen_id_2 }}');
         this.greekFontsTrigger = this.querySelector('[data-greek-fonts-trigger]');
         this.modal = this.querySelector('[data-greek-fonts-modal]');
         this.modalClose = this.querySelector('[data-modal-close]');
@@ -557,6 +557,6 @@
       }
     }
 
-    customElements.define('live-preview-{{ ai_gen_id }}', LivePreview{{ ai_gen_id }});
+    customElements.define('live-preview-{{ ai_gen_id_2 }}', LivePreview{{ ai_gen_id_2 }});
   })();
 </script>
