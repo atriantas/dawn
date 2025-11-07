@@ -400,7 +400,25 @@
             >
           </div>
         </div>
-
+<div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
+    <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
+      <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
+      {% if block.settings.greek_fonts_image %}
+        <img
+          src="{{ block.settings.greek_fonts_image | image_url: width: 1024 }}"
+          alt="Greek Fonts"
+          class="ai-live-preview-modal-image-{{ ai_gen_id }}"
+          loading="lazy"
+          width="450"
+          height="200"
+        >
+      {% else %}
+        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
         <div class="ai-live-preview-mockup-section-{{ ai_gen_id }}">
           <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id }}">
             {% if product.metafields.custom.mockup_image %}
@@ -433,25 +451,6 @@
             {{ block.settings.footnote_text }}
           </p>
         </div>
-        <div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
-    <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
-      <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
-      {% if block.settings.greek_fonts_image %}
-        <img
-          src="{{ block.settings.greek_fonts_image | image_url: width: 1024 }}"
-          alt="Greek Fonts"
-          class="ai-live-preview-modal-image-{{ ai_gen_id }}"
-          loading="lazy"
-          width="450"
-          height="200"
-        >
-      {% else %}
-        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id }}">
-          {{ 'image' | placeholder_svg_tag }}
-        </div>
-      {% endif %}
-    </div>
-  </div>
       </div>
     </div>
   </details>
