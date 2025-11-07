@@ -1,4 +1,4 @@
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+{% assign ai_gen_id_2 = block.id | replace: '_', '' | downcase %}
 
 {% liquid
   assign product_color = product.metafields.custom.color | downcase
@@ -9,41 +9,41 @@
   endif
 %}
 
-<live-preview-{{ ai_gen_id }} class="ai-live-preview-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <details class="ai-live-preview-details-{{ ai_gen_id }}" open>
-    <summary class="ai-live-preview-summary-{{ ai_gen_id }}">
+<live-preview-{{ ai_gen_id_2 }} class="ai-live-preview-{{ ai_gen_id_2 }}" {{ block.shopify_attributes }}>
+  <details class="ai-live-preview-details-{{ ai_gen_id_2 }}" open>
+    <summary class="ai-live-preview-summary-{{ ai_gen_id_2 }}">
       <span>{{ block.settings.summary_text }}</span>
-      <span class="ai-live-preview-arrow-{{ ai_gen_id }}">
+      <span class="ai-live-preview-arrow-{{ ai_gen_id_2 }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </span>
     </summary>
-    <div class="ai-live-preview-content-{{ ai_gen_id }}">
-      <div class="ai-live-preview-container-{{ ai_gen_id }}">
-        <div class="ai-live-preview-input-wrapper-{{ ai_gen_id }}">
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-input-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+    <div class="ai-live-preview-content-{{ ai_gen_id_2 }}">
+      <div class="ai-live-preview-container-{{ ai_gen_id_2 }}">
+        <div class="ai-live-preview-input-wrapper-{{ ai_gen_id_2 }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-input-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.input_label }}
             </label>
             <textarea
-              id="ai-live-preview-input-{{ ai_gen_id }}"
+              id="ai-live-preview-input-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.property_name }}]"
-              class="ai-live-preview-textarea-{{ ai_gen_id }}"
+              class="ai-live-preview-textarea-{{ ai_gen_id_2 }}"
               rows="5"
               placeholder="{{ block.settings.placeholder_text }}"
               required
             ></textarea>
           </div>
 
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-font-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-font-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.font_label }}
             </label>
             <select
-              id="ai-live-preview-font-{{ ai_gen_id }}"
+              id="ai-live-preview-font-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.font_property_name }}]"
-              class="ai-live-preview-select-{{ ai_gen_id }}"
+              class="ai-live-preview-select-{{ ai_gen_id_2 }}"
             >
               <option value="Helvetica" style="font-family: Helvetica, sans-serif;">1. Helvetica</option>
               <option value="New York" style="font-family: 'New York', serif;">2. New York</option>
@@ -66,54 +66,54 @@
               <option value="Nothing You Could Do" style="font-family: 'Nothing You Could Do', cursive;">19. Nothing You Could Do</option>
               <option value="Pinyon Script" style="font-family: 'Pinyon Script', cursive;">20. Pinyon Script</option>
             </select>
-            <a class="ai-live-preview-greek-fonts-link-{{ ai_gen_id }}" data-greek-fonts-trigger>
+            <a class="ai-live-preview-greek-fonts-link-{{ ai_gen_id_2 }}" data-greek-fonts-trigger>
               {{ block.settings.greek_fonts_link_text }}
             </a>
           </div>
 
-          <div class="ai-live-preview-field-{{ ai_gen_id }}">
-            <label for="ai-live-preview-file-{{ ai_gen_id }}" class="ai-live-preview-label-{{ ai_gen_id }}">
+          <div class="ai-live-preview-field-{{ ai_gen_id_2 }}">
+            <label for="ai-live-preview-file-{{ ai_gen_id_2 }}" class="ai-live-preview-label-{{ ai_gen_id_2 }}">
               {{ block.settings.file_label }}
             </label>
             <input
               type="file"
-              id="ai-live-preview-file-{{ ai_gen_id }}"
+              id="ai-live-preview-file-{{ ai_gen_id_2 }}"
               name="properties[{{ block.settings.file_property_name }}]"
-              class="ai-live-preview-file-input-{{ ai_gen_id }}"
+              class="ai-live-preview-file-input-{{ ai_gen_id_2 }}"
               accept="{{ block.settings.file_accept }}"
             >
           </div>
         </div>
 
-        <div class="ai-live-preview-mockup-section-{{ ai_gen_id }}">
-          <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id }}">
+        <div class="ai-live-preview-mockup-section-{{ ai_gen_id_2 }}">
+          <div class="ai-live-preview-mockup-wrapper-{{ ai_gen_id_2 }}">
             {% if product.metafields.custom.mockup_image %}
               <img
                 src="{{ product.metafields.custom.mockup_image | image_url: width: 800 }}"
                 alt="{{ product.title }} mockup"
-                class="ai-live-preview-mockup-image-{{ ai_gen_id }}"
+                class="ai-live-preview-mockup-image-{{ ai_gen_id_2 }}"
                 loading="lazy"
                 width="800"
                 height="800"
               >
             {% else %}
-              <div class="ai-live-preview-placeholder-{{ ai_gen_id }}">
+              <div class="ai-live-preview-placeholder-{{ ai_gen_id_2 }}">
                 {{ 'product-1' | placeholder_svg_tag }}
               </div>
-              <div class="ai-live-preview-empty-state-{{ ai_gen_id }}">
+              <div class="ai-live-preview-empty-state-{{ ai_gen_id_2 }}">
                 Add a mockup image to the product metafield (custom.mockup_image)
               </div>
             {% endif %}
 
-            <div class="ai-live-preview-text-overlay-{{ ai_gen_id }}">
+            <div class="ai-live-preview-text-overlay-{{ ai_gen_id_2 }}">
               <div
-                id="ai-live-preview-text-{{ ai_gen_id }}"
-                class="ai-live-preview-text-display-{{ ai_gen_id }}"
+                id="ai-live-preview-text-{{ ai_gen_id_2 }}"
+                class="ai-live-preview-text-display-{{ ai_gen_id_2 }}"
               ></div>
             </div>
           </div>
 
-          <p class="ai-live-preview-footnote-{{ ai_gen_id }}">
+          <p class="ai-live-preview-footnote-{{ ai_gen_id_2 }}">
             {{ block.settings.footnote_text }}
           </p>
         </div>
@@ -121,28 +121,28 @@
     </div>
   </details>
 
-  <div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
-    <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
-      <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
+  <div class="ai-live-preview-modal-{{ ai_gen_id_2 }}" data-greek-fonts-modal>
+    <div class="ai-live-preview-modal-content-{{ ai_gen_id_2 }}">
+      <button class="ai-live-preview-modal-close-{{ ai_gen_id_2 }}" data-modal-close aria-label="Close">×</button>
       {% if block.settings.greek_fonts_image %}
         <img
           src="{{ block.settings.greek_fonts_image | image_url: width: 1200 }}"
           alt="Greek Fonts"
-          class="ai-live-preview-modal-image-{{ ai_gen_id }}"
+          class="ai-live-preview-modal-image-{{ ai_gen_id_2 }}"
           loading="lazy"
         >
       {% else %}
-        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id }}">
+        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id_2 }}">
           {{ 'image' | placeholder_svg_tag }}
         </div>
       {% endif %}
     </div>
   </div>
-</live-preview-{{ ai_gen_id }}>
+</live-preview-{{ ai_gen_id_2 }}>
 
 <script>
   (function() {
-    class LivePreview{{ ai_gen_id }} extends HTMLElement {
+    class LivePreview{{ ai_gen_id_2 }} extends HTMLElement {
       constructor() {
         super();
         this.textarea = null;
@@ -154,9 +154,9 @@
       }
 
       connectedCallback() {
-        this.textarea = this.querySelector('#ai-live-preview-input-{{ ai_gen_id }}');
-        this.fontSelector = this.querySelector('#ai-live-preview-font-{{ ai_gen_id }}');
-        this.previewText = this.querySelector('#ai-live-preview-text-{{ ai_gen_id }}');
+        this.textarea = this.querySelector('#ai-live-preview-input-{{ ai_gen_id_2 }}');
+        this.fontSelector = this.querySelector('#ai-live-preview-font-{{ ai_gen_id_2 }}');
+        this.previewText = this.querySelector('#ai-live-preview-text-{{ ai_gen_id_2 }}');
         this.greekFontsTrigger = this.querySelector('[data-greek-fonts-trigger]');
         this.modal = this.querySelector('[data-greek-fonts-modal]');
         this.modalClose = this.querySelector('[data-modal-close]');
@@ -241,6 +241,6 @@
       }
     }
 
-    customElements.define('live-preview-{{ ai_gen_id }}', LivePreview{{ ai_gen_id }});
+    customElements.define('live-preview-{{ ai_gen_id_2 }}', LivePreview{{ ai_gen_id_2 }});
   })();
 </script>
