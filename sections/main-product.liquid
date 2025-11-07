@@ -518,6 +518,8 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+                {%- when 'live_mockup' -%}
+              {% render 'personalisation-row', block: block %}
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
@@ -740,8 +742,6 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'estimated' -%}
                 {% render 'estimated-time', block: block %}
-                {%- when 'live_mockup' -%}
-              {% render 'personalisation-row', block: block %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
