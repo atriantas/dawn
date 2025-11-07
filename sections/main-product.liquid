@@ -291,6 +291,8 @@
                     </div>
                   </details>
                 </div>
+                {%- when 'live_mockup' -%}
+              {% render 'personalisation-row', block: block %}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -448,8 +450,6 @@
                       </price-per-item>
                     {%- endif -%}
                   </div>
-                  {%- when 'live_mockup' -%}
-              {% render 'personalisation-row', block: block %}
                   <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
                     {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                       <span class="divider">
