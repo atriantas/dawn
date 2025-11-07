@@ -229,7 +229,7 @@
             "showMoreInfo": "modal",
             "showLogo": false,
             "showStats": true,
-            "showProjects": true,
+            "showProjects": false,
             "backgroundColor": "#e1efea",
             "textColor": "#026341",
             "borderColor": "#c9dcd2",
