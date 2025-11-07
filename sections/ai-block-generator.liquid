@@ -1,3 +1,26 @@
 {% for block in section.blocks %}
   {% render block %}
 {% endfor %}
+ 
+{% schema %}
+{
+  "name": "AI Block Generator",
+  "settings": [
+    {
+      "type": "header",
+      "content": "AI Block Generation",
+      "info": "Select ADD BLOCK and then click GENERATE and enter your prompt to create an AI powered block."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@theme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AI Block Generator"
+    }
+  ]
+}
+{% endschema %}
