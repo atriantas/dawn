@@ -105,8 +105,6 @@
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
-            {%- when 'live_mockup' -%}
-              {% render 'personalisation-row', block: block %}
               {%- when 'personalise' -%}
                 {% if block.settings.personalise %}
                   <div>
@@ -742,6 +740,8 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'estimated' -%}
                 {% render 'estimated-time', block: block %}
+                {%- when 'live_mockup' -%}
+              {% render 'personalisation-row', block: block %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
