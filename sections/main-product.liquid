@@ -16,6 +16,7 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {{ 'estimated-time.css' | asset_url | stylesheet_tag }}
+  {{ 'personalisation-row.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -741,6 +742,7 @@
               {%- when 'estimated' -%}
                 {% render 'estimated-time', block: block %}
             {%- endcase -%}
+            {% render 'personalisation-row' %}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
