@@ -437,25 +437,7 @@
     </div>
   </details>
 
-  <div class="product-popup-modal{{ ai_gen_id }}" data-greek-fonts-modal>
-    <div class="product-popup-modal__content{{ ai_gen_id }}">
-      <button class="product-popup-modal__toggle{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
-      {% if block.settings.greek_fonts_image %}
-        <img
-          src="{{ block.settings.greek_fonts_image | image_url: width: 1024 }}"
-          alt="Greek Fonts"
-          class="ai-live-preview-modal-image-{{ ai_gen_id }}"
-          loading="lazy"
-          width="450"
-          height="300"
-        >
-      {% else %}
-        <div class="ai-live-preview-modal-placeholder-{{ ai_gen_id }}">
-          {{ 'image' | placeholder_svg_tag }}
-        </div>
-      {% endif %}
-    </div>
-  </div>
+  
 </live-preview-{{ ai_gen_id }}>
 
 <script>
