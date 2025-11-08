@@ -106,7 +106,9 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'live_mockup' -%}
+                <div>
               {% render 'personalisation-row', block: block %}
+              </div>
               {%- when 'personalise' -%}
                 {% if block.settings.personalise %}
                   <div>
