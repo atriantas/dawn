@@ -437,7 +437,7 @@
     </div>
   </details>
 
-  <div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
+  <modal-dialog class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
     <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
       <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
       {% if block.settings.greek_fonts_image %}
@@ -455,7 +455,7 @@
         </div>
       {% endif %}
     </div>
-  </div>
+  </modal-dialog>
 </live-preview-{{ ai_gen_id }}>
 
 <script>
