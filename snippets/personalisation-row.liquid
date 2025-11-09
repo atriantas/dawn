@@ -17,7 +17,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
   .ai-live-preview-{{ ai_gen_id }} {
     width: 100%;
   }
@@ -305,9 +304,11 @@
     font-size: {{ block.settings.preview_text_size }}px;
     color: {{ text_color }};
     text-align: center;
-    white-space: pre-line;
-    word-wrap: break-word;
-    max-width: 100%;
+white-space: pre-wrap;
+word-break: normal;
+overflow-wrap: normal;
+max-width: 80%;
+display: inline-block;
     font-family: Helvetica, sans-serif;
   }
 
@@ -516,10 +517,28 @@
       }
 
       updatePreview(event) {
-        if (this.previewText) {
-          this.previewText.textContent = event.target.value;
-        }
-      }
+  if (!this.previewText) return;
+
+  const value = event.target.value;
+  this.previewText.textContent = value;
+
+  // Reset font size
+  const baseFontSize = {{ block.settings.preview_text_size }};
+  let currentFontSize = baseFontSize;
+  this.previewText.style.fontSize = baseFontSize + 'px';
+
+  // Wait for layout update
+  requestAnimationFrame(() => {
+    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% of parent
+    const textWidth = this.previewText.scrollWidth;
+
+    // Shrink font size until it fits 80% width
+    while (textWidth > parentWidth && currentFontSize > 8) {
+      currentFontSize -= 1;
+      this.previewText.style.fontSize = currentFontSize + 'px';
+    }
+  });
+}
 
       updateFont() {
         if (!this.fontSelector || !this.previewText) return;
