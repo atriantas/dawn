@@ -369,6 +369,26 @@
               class="ai-live-preview-select-{{ ai_gen_id }}"
             >
               <option value="Helvetica" style="font-family: Helvetica, sans-serif;">1. Helvetica</option>
+              <option value="New York" style="font-family: 'New York', serif;">2. New York</option>
+              <option value="Abril Fatface" style="font-family: 'Abril Fatface', serif;">3. Abril Fatface</option>
+              <option value="Anton" style="font-family: 'Anton', sans-serif;">4. Anton</option>
+              <option value="Archivo Black" style="font-family: 'Archivo Black', sans-serif;">5. Archivo Black</option>
+              <option value="Arial" style="font-family: Arial, sans-serif;">6. Arial</option>
+              <option value="Bagel Fat One" style="font-family: 'Bagel Fat One', cursive;">7. Bagel Fat One</option>
+              <option value="BEBAS NEUE" style="font-family: 'BEBAS NEUE', sans-serif;">8. BEBAS NEUE</option>
+              <option value="Caprasimo" style="font-family: 'Caprasimo', cursive;">9. Caprasimo</option>
+              <option value="Caveat" style="font-family: 'Caveat', cursive;">10. Caveat</option>
+              <option value="Chakra Petch" style="font-family: 'Chakra Petch', sans-serif;">11. Chakra Petch</option>
+              <option value="Courier New" style="font-family: 'Courier New', monospace;">12. Courier New</option>
+              <option value="DM Serif Text" style="font-family: 'DM Serif Text', serif;">13. DM Serif Text</option>
+              <option value="Funnel Display" style="font-family: 'Funnel Display', sans-serif;">14. Funnel Display</option>
+              <option value="Gluten" style="font-family: 'Gluten', cursive;">15. Gluten</option>
+              <option value="Josefin Sans" style="font-family: 'Josefin Sans', sans-serif;">16. Josefin Sans</option>
+              <option value="Kaushan Script" style="font-family: 'Kaushan Script', cursive;">17. Kaushan Script</option>
+              <option value="Lobster Two" style="font-family: 'Lobster Two', cursive;">18. Lobster Two</option>
+              <option value="Nothing You Could Do" style="font-family: 'Nothing You Could Do', cursive;">19. Nothing You Could Do</option>
+              <option value="Pinyon Script" style="font-family: 'Pinyon Script', cursive;">20. Pinyon Script</option>
+
             </select>
             <a class="ai-live-preview-greek-fonts-link-{{ ai_gen_id }}" data-greek-fonts-trigger>
               {{ block.settings.greek_fonts_link_text }}
@@ -427,7 +447,7 @@
   <div class="ai-live-preview-modal-{{ ai_gen_id }}" data-greek-fonts-modal>
     <div class="ai-live-preview-modal-content-{{ ai_gen_id }}">
       <button class="ai-live-preview-modal-close-{{ ai_gen_id }}" data-modal-close aria-label="Close">×</button>
-   {% if block.settings.greek_fonts_image %}
+{% if block.settings.greek_fonts_image %}
         <img
           src="{{ block.settings.greek_fonts_image | image_url: width: 1024 }}"
           alt="Greek Fonts"
@@ -441,6 +461,7 @@
           {{ 'image' | placeholder_svg_tag }}
         </div>
       {% endif %}
+
     </div>
   </div>
 </live-preview-{{ ai_gen_id }}>
@@ -459,6 +480,7 @@
         this.textOverlay = null;
         this.baseFontSize = 48;
         this.minFontSize = 12;
+        this.maxWidthPercent = 0.8;
       }
 
       connectedCallback() {
@@ -502,11 +524,11 @@
       updatePreview(event) {
         if (this.previewText) {
           this.previewText.textContent = event.target.value;
-          this.fitTextToContainer();
+          this.fitTextToWidth();
         }
       }
 
-      fitTextToContainer() {
+      fitTextToWidth() {
         if (!this.previewText || !this.textOverlay) return;
 
         const text = this.previewText.textContent;
@@ -515,25 +537,69 @@
           return;
         }
 
+        this.previewText.style.whiteSpace = 'pre-line';
+        this.previewText.style.wordWrap = 'normal';
+        this.previewText.style.overflowWrap = 'normal';
+
+        const maxWidth = this.textOverlay.offsetWidth * this.maxWidthPercent;
+        const lines = text.split('\n');
         let fontSize = this.baseFontSize;
+
         this.previewText.style.fontSize = fontSize + 'px';
-        this.previewText.style.whiteSpace = 'pre-wrap';
-        this.previewText.style.wordWrap = 'break-word';
 
-        const containerWidth = this.textOverlay.offsetWidth;
-        const containerHeight = this.textOverlay.offsetHeight;
-
-        while (fontSize > this.minFontSize) {
-          this.previewText.style.fontSize = fontSize + 'px';
+        let needsResize = false;
+        for (const line of lines) {
+          if (line.trim() === '') continue;
           
-          const textWidth = this.previewText.scrollWidth;
-          const textHeight = this.previewText.scrollHeight;
+          const tempSpan = document.createElement('span');
+          tempSpan.style.fontSize = fontSize + 'px';
+          tempSpan.style.fontFamily = this.previewText.style.fontFamily;
+          tempSpan.style.visibility = 'hidden';
+          tempSpan.style.position = 'absolute';
+          tempSpan.style.whiteSpace = 'nowrap';
+          tempSpan.textContent = line;
+          document.body.appendChild(tempSpan);
+          
+          const lineWidth = tempSpan.offsetWidth;
+          document.body.removeChild(tempSpan);
 
-          if (textWidth <= containerWidth && textHeight <= containerHeight) {
+          if (lineWidth > maxWidth) {
+            needsResize = true;
             break;
           }
+        }
 
-          fontSize -= 1;
+        if (needsResize) {
+          while (fontSize > this.minFontSize) {
+            fontSize -= 1;
+            this.previewText.style.fontSize = fontSize + 'px';
+            
+            let allLinesFit = true;
+            for (const line of lines) {
+              if (line.trim() === '') continue;
+              
+              const tempSpan = document.createElement('span');
+              tempSpan.style.fontSize = fontSize + 'px';
+              tempSpan.style.fontFamily = this.previewText.style.fontFamily;
+              tempSpan.style.visibility = 'hidden';
+              tempSpan.style.position = 'absolute';
+              tempSpan.style.whiteSpace = 'nowrap';
+              tempSpan.textContent = line;
+              document.body.appendChild(tempSpan);
+              
+              const lineWidth = tempSpan.offsetWidth;
+              document.body.removeChild(tempSpan);
+
+              if (lineWidth > maxWidth) {
+                allLinesFit = false;
+                break;
+              }
+            }
+
+            if (allLinesFit) {
+              break;
+            }
+          }
         }
       }
 
@@ -543,6 +609,9 @@
         const selectedFont = this.fontSelector.value;
         const fontFamilyMap = {
           'Helvetica': 'Helvetica, sans-serif',
+        };
+
+        this.previewText.style.fontFamily = fontFamilyMap[selectedFont] || 'Helvetica, sans-serif';
           'New York': "'New York', serif",
           'Abril Fatface': "'Abril Fatface', serif",
           'Anton': "'Anton', sans-serif",
@@ -562,10 +631,7 @@
           'Lobster Two': "'Lobster Two', cursive",
           'Nothing You Could Do': "'Nothing You Could Do', cursive",
           'Pinyon Script': "'Pinyon Script', cursive"
-        };
-
-        this.previewText.style.fontFamily = fontFamilyMap[selectedFont] || 'Helvetica, sans-serif';
-        this.fitTextToContainer();
+        this.fitTextToWidth();
       }
 
       openModal() {
