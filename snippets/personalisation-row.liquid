@@ -7,9 +7,12 @@
   if product_color == 'white' or product_color == 'beige' or product_color == 'yellow'
     assign text_color = '#000000'
   endif
-%}
+  %}
 
 {% style %}
+@font-face {
+  font-family: 'Abril Fatface'; /* Name you will use in CSS */
+}
   .ai-live-preview-{{ ai_gen_id }} {
     width: 100%;
   }
