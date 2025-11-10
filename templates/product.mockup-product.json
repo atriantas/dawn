@@ -70,7 +70,7 @@
             "shadow_hover_color": "#0000001a",
             "input_label": "Your personalization text",
             "property_name": "Personalization",
-            "placeholder_text": "Enter your custom text here. Press Enter for new lines",
+            "placeholder_text": "{{ product.metafields.custom.personalisation.value }}. Press Enter for new lines",
             "font_label": "Choose font",
             "font_property_name": "Font",
             "greek_fonts_link_text": "Greek Fonts",
