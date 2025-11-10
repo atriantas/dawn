@@ -304,15 +304,14 @@
   font-size: {{ block.settings.preview_text_size }}px;
   color: {{ text_color }};
   text-align: center;
-  white-space: pre; /* respect only manual line breaks */
+  white-space: pre; /* keeps manual line breaks only */
   word-break: keep-all;
   overflow-wrap: normal;
   display: inline-block;
   max-width: 80%;
   font-family: Helvetica, sans-serif;
-  transition: font-size 0.2s ease;
+  transition: font-size 0.25s ease;
 }
-
 
   .ai-live-preview-empty-state-{{ ai_gen_id }} {
     position: absolute;
@@ -516,6 +515,12 @@
             }
           });
         }
+        window.addEventListener('resize', () => {
+  if (this.textarea) {
+    this.updatePreview({ target: this.textarea });
+  }
+});
+
       }
 
 updatePreview(event) {
@@ -525,32 +530,41 @@ updatePreview(event) {
   this.previewText.textContent = value;
 
   const baseFontSize = {{ block.settings.preview_text_size }};
+  const minFontSize = 8;
   let currentFontSize = parseFloat(window.getComputedStyle(this.previewText).fontSize);
 
-  // Temporarily reset if it's smaller than base, to allow growing back up
-  if (currentFontSize < baseFontSize) {
-    this.previewText.style.fontSize = baseFontSize + 'px';
-  }
+  // Function to dynamically resize text
+  const resizeText = () => {
+    const parent = this.previewText.parentElement;
+    const parentWidth = parent.offsetWidth * 0.8; // 80% rule
+    const textWidth = this.previewText.scrollWidth;
 
-  requestAnimationFrame(() => {
-    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8;
-    let textWidth = this.previewText.scrollWidth;
+    // Adjust base size based on container width (responsive scaling)
+    const responsiveBase = baseFontSize * (parent.offsetWidth / 600); // 600px = reference width
+    const targetBase = Math.max(Math.min(responsiveBase, baseFontSize), minFontSize);
 
-    // Shrink until it fits 80%
-    while (textWidth > parentWidth && currentFontSize > 8) {
+    // Reset if smaller than responsive base
+    if (currentFontSize < targetBase) {
+      currentFontSize = targetBase;
+      this.previewText.style.fontSize = currentFontSize + 'px';
+    }
+
+    // Shrink until it fits within 80% of width
+    while (this.previewText.scrollWidth > parentWidth && currentFontSize > minFontSize) {
       currentFontSize -= 1;
       this.previewText.style.fontSize = currentFontSize + 'px';
-      textWidth = this.previewText.scrollWidth;
     }
 
-    // Grow back up to base size if there’s space
-    while (textWidth < parentWidth * 0.7 && currentFontSize < baseFontSize) {
+    // Grow back if there’s space
+    while (this.previewText.scrollWidth < parentWidth * 0.7 && currentFontSize < targetBase) {
       currentFontSize += 1;
       this.previewText.style.fontSize = currentFontSize + 'px';
-      textWidth = this.previewText.scrollWidth;
     }
-  });
+  };
+
+  requestAnimationFrame(resizeText);
 }
+
 
       updateFont() {
         if (!this.fontSelector || !this.previewText) return;
