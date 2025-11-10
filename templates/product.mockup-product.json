@@ -75,6 +75,7 @@
             "font_property_name": "Font",
             "greek_fonts_link_text": "Greek Fonts",
             "greek_fonts_link_color": "#1f9393",
+            "greek_fonts_image": "shopify://shop_images/GreekFonts-1024.jpg",
             "file_label": "Upload file",
             "file_property_name": "Uploaded File",
             "file_accept": "image/*,.pdf",
