@@ -304,14 +304,15 @@
   font-size: {{ block.settings.preview_text_size }}px;
   color: {{ text_color }};
   text-align: center;
-  white-space: pre; /* keep user’s manual line breaks, ignore automatic wrapping */
+  white-space: pre; /* respect only manual line breaks */
   word-break: keep-all;
   overflow-wrap: normal;
   display: inline-block;
   max-width: 80%;
   font-family: Helvetica, sans-serif;
-  transition: font-size 0.2s ease; /* smooth font resizing */
+  transition: font-size 0.2s ease;
 }
+
 
   .ai-live-preview-empty-state-{{ ai_gen_id }} {
     position: absolute;
@@ -517,26 +518,36 @@
         }
       }
 
-      updatePreview(event) {
+updatePreview(event) {
   if (!this.previewText) return;
 
   const value = event.target.value;
   this.previewText.textContent = value;
 
-  // Reset to base size
   const baseFontSize = {{ block.settings.preview_text_size }};
-  let currentFontSize = baseFontSize;
-  this.previewText.style.fontSize = baseFontSize + 'px';
+  let currentFontSize = parseFloat(window.getComputedStyle(this.previewText).fontSize);
 
-  // Wait for the DOM to measure width
+  // Temporarily reset if it's smaller than base, to allow growing back up
+  if (currentFontSize < baseFontSize) {
+    this.previewText.style.fontSize = baseFontSize + 'px';
+  }
+
   requestAnimationFrame(() => {
-    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% limit
-    const textWidth = this.previewText.scrollWidth;
+    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8;
+    let textWidth = this.previewText.scrollWidth;
 
-    // Shrink font size until it fits within 80%
-    while (this.previewText.scrollWidth > parentWidth && currentFontSize > 8) {
+    // Shrink until it fits 80%
+    while (textWidth > parentWidth && currentFontSize > 8) {
       currentFontSize -= 1;
       this.previewText.style.fontSize = currentFontSize + 'px';
+      textWidth = this.previewText.scrollWidth;
+    }
+
+    // Grow back up to base size if there’s space
+    while (textWidth < parentWidth * 0.7 && currentFontSize < baseFontSize) {
+      currentFontSize += 1;
+      this.previewText.style.fontSize = currentFontSize + 'px';
+      textWidth = this.previewText.scrollWidth;
     }
   });
 }
