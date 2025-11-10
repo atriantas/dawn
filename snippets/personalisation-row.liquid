@@ -310,7 +310,6 @@
   display: inline-block; /* Needed for accurate width measurement */
   max-width: 100%;
   font-family: Helvetica, sans-serif;
-  transition: font-size 0.2s ease;
 }
 
 
@@ -518,35 +517,35 @@
         }
       }
 
-     updatePreview(event) {
+updatePreview(event) {
   if (!this.previewText) return;
 
   const value = event.target.value;
+  // Preserve only manual newlines
+  this.previewText.textContent = value;
 
-  // Preserve manual line breaks only
-  const formattedValue = value.replace(/\n/g, '\n');
-  this.previewText.textContent = formattedValue;
-
-  // Base font size (from settings)
   const baseFontSize = {{ block.settings.preview_text_size }};
   let currentFontSize = baseFontSize;
-
-  // Reset font size first
   this.previewText.style.fontSize = baseFontSize + 'px';
 
   requestAnimationFrame(() => {
     const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% width limit
-    const textWidth = this.previewText.scrollWidth;
 
-    // Dynamically shrink text to fit 80% width
-    if (textWidth > parentWidth) {
+    // Handle multi-line separately (if user pressed Enter)
+    const lines = value.split('\n');
+
+    if (lines.length === 1) {
+      // Single-line: shrink to fit 80% width
       while (this.previewText.scrollWidth > parentWidth && currentFontSize > 8) {
         currentFontSize -= 1;
         this.previewText.style.fontSize = currentFontSize + 'px';
       }
-    } else {
-      // If text becomes smaller again, grow font up to base size
-      while (this.previewText.scrollWidth < parentWidth * 0.8 && currentFontSize < baseFontSize) {
+
+      // Grow text back up (if user deleted chars)
+      while (
+        this.previewText.scrollWidth < parentWidth * 0.8 &&
+        currentFontSize < baseFontSize
+      ) {
         currentFontSize += 1;
         this.previewText.style.fontSize = currentFontSize + 'px';
         if (this.previewText.scrollWidth > parentWidth) {
@@ -555,9 +554,13 @@
           break;
         }
       }
+    } else {
+      // If user inserted line breaks manually, reset to base size
+      this.previewText.style.fontSize = baseFontSize + 'px';
     }
   });
 }
+
 
 
       updateFont() {
