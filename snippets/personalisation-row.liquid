@@ -300,17 +300,18 @@
     pointer-events: none;
   }
 
-  .ai-live-preview-text-display-{{ ai_gen_id }} {
-    font-size: {{ block.settings.preview_text_size }}px;
-    color: {{ text_color }};
-    text-align: center;
-white-space: pre-wrap;
-word-break: normal;
-overflow-wrap: normal;
-max-width: 80%;
-display: inline-block;
-    font-family: Helvetica, sans-serif;
-  }
+.ai-live-preview-text-display-{{ ai_gen_id }} {
+  font-size: {{ block.settings.preview_text_size }}px;
+  color: {{ text_color }};
+  text-align: center;
+  white-space: pre; /* keep user’s manual line breaks, ignore automatic wrapping */
+  word-break: keep-all;
+  overflow-wrap: normal;
+  display: inline-block;
+  max-width: 80%;
+  font-family: Helvetica, sans-serif;
+  transition: font-size 0.2s ease; /* smooth font resizing */
+}
 
   .ai-live-preview-empty-state-{{ ai_gen_id }} {
     position: absolute;
@@ -522,18 +523,18 @@ display: inline-block;
   const value = event.target.value;
   this.previewText.textContent = value;
 
-  // Reset font size
+  // Reset to base size
   const baseFontSize = {{ block.settings.preview_text_size }};
   let currentFontSize = baseFontSize;
   this.previewText.style.fontSize = baseFontSize + 'px';
 
-  // Wait for layout update
+  // Wait for the DOM to measure width
   requestAnimationFrame(() => {
-    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% of parent
+    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% limit
     const textWidth = this.previewText.scrollWidth;
 
-    // Shrink font size until it fits 80% width
-    while (textWidth > parentWidth && currentFontSize > 8) {
+    // Shrink font size until it fits within 80%
+    while (this.previewText.scrollWidth > parentWidth && currentFontSize > 8) {
       currentFontSize -= 1;
       this.previewText.style.fontSize = currentFontSize + 'px';
     }
