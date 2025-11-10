@@ -304,8 +304,9 @@
   font-size: {{ block.settings.preview_text_size }}px;
   color: {{ text_color }};
   text-align: center;
-  white-space: pre-line;
-  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
   max-width: 100%;
   font-family: Helvetica, sans-serif;
 }
@@ -514,29 +515,47 @@
         }
       }
 
-      updatePreview(event) {
+     updatePreview(event) {
   if (!this.previewText) return;
 
   const value = event.target.value;
-  this.previewText.textContent = value;
 
-  // Reset font size
+  // Preserve manual line breaks only
+  const formattedValue = value.replace(/\n/g, '\n');
+  this.previewText.textContent = formattedValue;
+
+  // Base font size (from settings)
   const baseFontSize = {{ block.settings.preview_text_size }};
   let currentFontSize = baseFontSize;
+
+  // Reset font size first
   this.previewText.style.fontSize = baseFontSize + 'px';
 
-  // Wait for layout update
   requestAnimationFrame(() => {
-    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% of parent
+    const parentWidth = this.previewText.parentElement.offsetWidth * 0.8; // 80% width limit
     const textWidth = this.previewText.scrollWidth;
 
-    // Shrink font size until it fits 80% width
-    while (textWidth > parentWidth && currentFontSize > 8) {
-      currentFontSize -= 1;
-      this.previewText.style.fontSize = currentFontSize + 'px';
+    // Dynamically shrink text to fit 80% width
+    if (textWidth > parentWidth) {
+      while (this.previewText.scrollWidth > parentWidth && currentFontSize > 8) {
+        currentFontSize -= 1;
+        this.previewText.style.fontSize = currentFontSize + 'px';
+      }
+    } else {
+      // If text becomes smaller again, grow font up to base size
+      while (this.previewText.scrollWidth < parentWidth * 0.8 && currentFontSize < baseFontSize) {
+        currentFontSize += 1;
+        this.previewText.style.fontSize = currentFontSize + 'px';
+        if (this.previewText.scrollWidth > parentWidth) {
+          currentFontSize -= 1;
+          this.previewText.style.fontSize = currentFontSize + 'px';
+          break;
+        }
+      }
     }
   });
 }
+
 
       updateFont() {
         if (!this.fontSelector || !this.previewText) return;
