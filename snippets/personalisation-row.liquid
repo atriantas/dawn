@@ -304,13 +304,13 @@
   font-size: {{ block.settings.preview_text_size }}px;
   color: {{ text_color }};
   text-align: center;
-  white-space: pre; /* keeps manual line breaks only */
-  word-break: keep-all;
+  white-space: pre;         /* only manual Enter creates a new line */
+  word-break: keep-all;     /* don't break words automatically */
   overflow-wrap: normal;
   display: inline-block;
   max-width: 80%;
   font-family: Helvetica, sans-serif;
-  transition: font-size 0.25s ease;
+  transition: font-size 0.18s ease; /* smooth resize */
 }
 
   .ai-live-preview-empty-state-{{ ai_gen_id }} {
@@ -526,44 +526,57 @@
 updatePreview(event) {
   if (!this.previewText) return;
 
-  const value = event.target.value;
-  this.previewText.textContent = value;
+  const value = event.target.value || '';
+  // preserve user line breaks (Enter) but otherwise keep single-line behavior
+  this.previewText.textContent = value.length ? value : '\u00A0'; // non-empty for measurement
 
-  const baseFontSize = {{ block.settings.preview_text_size }};
+  // configuration
+  const baseFontSize = {{ block.settings.preview_text_size }}; // base size from Liquid
   const minFontSize = 8;
-  let currentFontSize = parseFloat(window.getComputedStyle(this.previewText).fontSize);
+  const referenceWidth = 600; // reference width for responsive scaling
+  const parent = this.previewText.parentElement;
+  if (!parent) return;
 
-  // Function to dynamically resize text
-  const resizeText = () => {
-    const parent = this.previewText.parentElement;
-    const parentWidth = parent.offsetWidth * 0.8; // 80% rule
-    const textWidth = this.previewText.scrollWidth;
+  // compute responsive base size (keeps proportional on different mockup sizes)
+  const responsiveBase = baseFontSize * (parent.offsetWidth / referenceWidth);
+  const targetBase = Math.max(Math.min(responsiveBase, baseFontSize), minFontSize);
 
-    // Adjust base size based on container width (responsive scaling)
-    const responsiveBase = baseFontSize * (parent.offsetWidth / 600); // 600px = reference width
-    const targetBase = Math.max(Math.min(responsiveBase, baseFontSize), minFontSize);
+  // apply target base immediately (so measurement is predictable)
+  this.previewText.style.fontSize = targetBase + 'px';
 
-    // Reset if smaller than responsive base
-    if (currentFontSize < targetBase) {
-      currentFontSize = targetBase;
-      this.previewText.style.fontSize = currentFontSize + 'px';
+  // available width = 80% of parent (you can change the 0.8 if desired)
+  const availableWidth = Math.max(1, Math.floor(parent.offsetWidth * 0.8));
+
+  // measurement + single-step compute in next frame
+  requestAnimationFrame(() => {
+    // measure the rendered width of the text (scrollWidth covers inline content)
+    const measuredWidth = this.previewText.scrollWidth;
+
+    // if measuredWidth <= availableWidth, we can keep targetBase (or maybe grow later)
+    let calculatedSize = targetBase;
+
+    if (measuredWidth > availableWidth) {
+      // compute scale factor and apply in one step
+      const scale = availableWidth / measuredWidth;
+      calculatedSize = Math.max(minFontSize, Math.floor(targetBase * scale));
+    } else {
+      // there's room — keep full targetBase (we don't try to overscale past targetBase)
+      calculatedSize = targetBase;
     }
 
-    // Shrink until it fits within 80% of width
-    while (this.previewText.scrollWidth > parentWidth && currentFontSize > minFontSize) {
-      currentFontSize -= 1;
-      this.previewText.style.fontSize = currentFontSize + 'px';
+    // tolerance to prevent micro-oscillation
+    const last = this._lastPreviewFontSize || 0;
+    if (Math.abs(calculatedSize - last) > 0.5) {
+      this.previewText.style.fontSize = calculatedSize + 'px';
+      this._lastPreviewFontSize = calculatedSize;
+    } else {
+      // if difference is tiny, keep existing (no DOM update)
+      this.previewText.style.fontSize = (last || calculatedSize) + 'px';
+      this._lastPreviewFontSize = last || calculatedSize;
     }
-
-    // Grow back if there’s space
-    while (this.previewText.scrollWidth < parentWidth * 0.7 && currentFontSize < targetBase) {
-      currentFontSize += 1;
-      this.previewText.style.fontSize = currentFontSize + 'px';
-    }
-  };
-
-  requestAnimationFrame(resizeText);
+  });
 }
+
 
 
       updateFont() {
