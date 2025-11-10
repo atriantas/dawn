@@ -44,10 +44,6 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "personalise": {
           "type": "personalise",
           "settings": {
@@ -62,6 +58,10 @@
             "text": "Available Greek fonts",
             "page": "greek-fonts"
           }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -187,9 +187,9 @@
         "judge_me_reviews_preview_badge_j3QeFK",
         "price",
         "variant_picker",
-        "quantity_selector",
         "personalise",
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
+        "quantity_selector",
         "buy_buttons",
         "share",
         "estimated_YGqb6V",
