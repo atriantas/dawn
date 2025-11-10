@@ -44,12 +44,59 @@
             "swatch_shape": "circle"
           }
         },
+        "live_mockup_nBEwq3": {
+          "type": "live_mockup",
+          "settings": {
+            "summary_text": "Customize Your Product Here",
+            "collapsible_background_color": "#f6f6f4",
+            "collapsible_hover_background_color": "#f6f6f4",
+            "collapsible_text_color": "#3f3631",
+            "collapsible_hover_text_color": "#3f3631",
+            "collapsible_border_color": "#3f3631",
+            "collapsible_hover_border_color": "#3f3631",
+            "collapsible_border_thickness": 2,
+            "collapsible_border_radius": 30,
+            "arrow_color": "#3f3631",
+            "arrow_hover_color": "#3f3631",
+            "shadow_horizontal": 4,
+            "shadow_vertical": 4,
+            "shadow_blur": 0,
+            "shadow_spread": 0,
+            "shadow_color": "#0000001a",
+            "shadow_hover_horizontal": 6,
+            "shadow_hover_vertical": 6,
+            "shadow_hover_blur": 0,
+            "shadow_hover_spread": 0,
+            "shadow_hover_color": "#00000026",
+            "input_label": "Your personalization text",
+            "property_name": "Personalization",
+            "placeholder_text": "Enter your custom text here. Press Enter for new lines.",
+            "font_label": "Choose font",
+            "font_property_name": "Font",
+            "greek_fonts_link_text": "Greek Fonts",
+            "greek_fonts_link_color": "#1f9393",
+            "file_label": "Upload file",
+            "file_property_name": "Uploaded File",
+            "file_accept": "image/*,.pdf",
+            "footnote_text": "The personalization preview is not accurate and should be used only for a general idea of the engraving, as it is a simulation that will not look exactly like the final product.",
+            "footnote_size": 11,
+            "footnote_color": "#666666",
+            "label_color": "#000000",
+            "input_border_color": "#cccccc",
+            "input_focus_color": "#1f9393",
+            "input_border_radius": 6,
+            "preview_text_size": 20,
+            "preview_text_color": "#ffffff",
+            "mockup_border_radius": 6
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
         },
         "personalise": {
           "type": "personalise",
+          "disabled": true,
           "settings": {
             "personalise": "Personalisation",
             "instructions": "example:{{ product.metafields.custom.personalisation.value }}",
@@ -58,6 +105,7 @@
         },
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648": {
           "type": "popup",
+          "disabled": true,
           "settings": {
             "text": "Available Greek fonts",
             "page": "greek-fonts"
@@ -187,6 +235,7 @@
         "judge_me_reviews_preview_badge_j3QeFK",
         "price",
         "variant_picker",
+        "live_mockup_nBEwq3",
         "quantity_selector",
         "personalise",
         "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
