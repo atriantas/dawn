@@ -304,13 +304,13 @@
   font-size: {{ block.settings.preview_text_size }}px;
   color: {{ text_color }};
   text-align: center;
-  white-space: pre;         /* only manual Enter creates a new line */
-  word-break: keep-all;     /* don't break words automatically */
+  white-space: pre; /* only breaks on user-entered newlines */
+  word-break: keep-all;
   overflow-wrap: normal;
   display: inline-block;
   max-width: 80%;
   font-family: Helvetica, sans-serif;
-  transition: font-size 0.18s ease; /* smooth resize */
+  transition: font-size 0.25s ease;
 }
 
   .ai-live-preview-empty-state-{{ ai_gen_id }} {
@@ -527,57 +527,41 @@ updatePreview(event) {
   if (!this.previewText) return;
 
   const value = event.target.value || '';
-  // preserve user line breaks (Enter) but otherwise keep single-line behavior
-  this.previewText.textContent = value.length ? value : '\u00A0'; // non-empty for measurement
+  this.previewText.textContent = value.length ? value : '\u00A0'; // prevents collapse
 
-  // configuration
-  const baseFontSize = {{ block.settings.preview_text_size }}; // base size from Liquid
+  const baseFontSize = {{ block.settings.preview_text_size }};
   const minFontSize = 8;
-  const referenceWidth = 600; // reference width for responsive scaling
+  const referenceWidth = 600; // used for responsive scaling
   const parent = this.previewText.parentElement;
   if (!parent) return;
 
-  // compute responsive base size (keeps proportional on different mockup sizes)
+  // calculate responsive base font size
   const responsiveBase = baseFontSize * (parent.offsetWidth / referenceWidth);
   const targetBase = Math.max(Math.min(responsiveBase, baseFontSize), minFontSize);
 
-  // apply target base immediately (so measurement is predictable)
+  // apply base font size first
   this.previewText.style.fontSize = targetBase + 'px';
 
-  // available width = 80% of parent (you can change the 0.8 if desired)
-  const availableWidth = Math.max(1, Math.floor(parent.offsetWidth * 0.8));
-
-  // measurement + single-step compute in next frame
   requestAnimationFrame(() => {
-    // measure the rendered width of the text (scrollWidth covers inline content)
-    const measuredWidth = this.previewText.scrollWidth;
+    const availableWidth = parent.offsetWidth * 0.8; // 80% limit
+    const textWidth = this.previewText.scrollWidth;
 
-    // if measuredWidth <= availableWidth, we can keep targetBase (or maybe grow later)
-    let calculatedSize = targetBase;
+    let newFontSize = targetBase;
 
-    if (measuredWidth > availableWidth) {
-      // compute scale factor and apply in one step
-      const scale = availableWidth / measuredWidth;
-      calculatedSize = Math.max(minFontSize, Math.floor(targetBase * scale));
-    } else {
-      // there's room — keep full targetBase (we don't try to overscale past targetBase)
-      calculatedSize = targetBase;
+    // shrink only when text exceeds 80% width
+    if (textWidth > availableWidth) {
+      const scale = availableWidth / textWidth;
+      newFontSize = Math.max(minFontSize, targetBase * scale);
     }
 
-    // tolerance to prevent micro-oscillation
+    // smooth update only when changed significantly
     const last = this._lastPreviewFontSize || 0;
-    if (Math.abs(calculatedSize - last) > 0.5) {
-      this.previewText.style.fontSize = calculatedSize + 'px';
-      this._lastPreviewFontSize = calculatedSize;
-    } else {
-      // if difference is tiny, keep existing (no DOM update)
-      this.previewText.style.fontSize = (last || calculatedSize) + 'px';
-      this._lastPreviewFontSize = last || calculatedSize;
+    if (Math.abs(newFontSize - last) > 0.5) {
+      this.previewText.style.fontSize = newFontSize + 'px';
+      this._lastPreviewFontSize = newFontSize;
     }
   });
 }
-
-
 
       updateFont() {
         if (!this.fontSelector || !this.previewText) return;
