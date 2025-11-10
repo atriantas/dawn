@@ -3,10 +3,6 @@
 {% liquid
   assign product_color = product.metafields.custom.color | downcase
   assign text_color = block.settings.preview_text_color
-  
-  if product_color == 'white' or product_color == 'beige' or product_color == 'yellow'
-    assign text_color = '#000000'
-  endif
   %}
 
 {% style %}
