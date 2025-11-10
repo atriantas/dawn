@@ -1,0 +1,390 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "880150c9-0457-4f23-b7fe-34088e05bc34": {
+      "type": "breadcrumb-bar",
+      "settings": {
+        "breadcrumb_text": ""
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.short_description.value }}",
+            "text_style": "body"
+          }
+        },
+        "judge_me_reviews_preview_badge_j3QeFK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "personalise": {
+          "type": "personalise",
+          "settings": {
+            "personalise": "Personalisation",
+            "instructions": "example:{{ product.metafields.custom.personalisation.value }}",
+            "upload": "Upload your file"
+          }
+        },
+        "d3ae2714-28b2-4757-a5a4-1f9171cc6648": {
+          "type": "popup",
+          "settings": {
+            "text": "Available Greek fonts",
+            "page": "greek-fonts"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Get a second opinion from your friends!"
+          }
+        },
+        "estimated_YGqb6V": {
+          "type": "estimated",
+          "settings": {
+            "estimate": "Estimated delivery date",
+            "order_placed": "Order placed",
+            "order_shipped": "Parcel shipped",
+            "order_deliveried": "Delivered",
+            "delivery_color": "#f6f6f4"
+          }
+        },
+        "16bf1687-5947-4c0a-aec9-fa723370ab9b": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "background_color": "#ffffff",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/volunteer_activism_50dp_1F9393_Circle.png",
+            "heading_1": "Handmade",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/stacks_24dp_FILL0_wght300_GRAD0_opsz24_dc5dea6a-764b-4bf2-9a7d-987665a84a23.png",
+            "heading_2": "{{ product.metafields.custom.material.value }}",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/Slab_Serif_50dp_1F9393.png",
+            "heading_3": "Engraving"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Dimensions",
+            "icon": "ruler",
+            "content": "<p>{{ product.metafields.custom.specs | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "box",
+            "content": "",
+            "page": "policies-and-shipping-rates"
+          }
+        },
+        "92b2f665-58ab-4f83-a4be-e9e7a399e5e9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Payments",
+            "icon": "check_mark",
+            "content": "<p><strong>We accept the following payment methods:</strong></p><ul><li>Visa, MasterCard, PayPal, Apple Pay, Google Pay, iDeal, Bancontact, Maestro, American Express, Diners Club, Discover and JCB</li></ul><p>The payments are processed through Stripe, Viva Wallet and PayPal.</p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Faq",
+            "icon": "question_mark",
+            "content": "<p><strong>Custom and personalized orders</strong><br/>Every product is handmade for each customer separately, so you are always welcome to ask for custom orders!</p><p><strong>Gift wrapping and packaging</strong><br/>Please inform us if you want the product to be wrapped as a gift, but we recommend doing it yourself, so you can put your own style too.</p>",
+            "page": ""
+          }
+        },
+        "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": true,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 1,
+            "pagination_style": "numbers",
+            "image_ratio": "square",
+            "enable_quick_add": true
+          }
+        },
+        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div style=\"text-align:center; font-weight: bold; font-size: 13px; border-radius:8px; padding:8px; background-color: #f8f1dc; box-shadow:var(--inputs-shadow-horizontal-offset) var(--inputs-shadow-vertical-offset) var(--inputs-shadow-blur-radius) rgba(var(--color-shadow),var(--inputs-shadow-opacity));\">Visit our <a href=\"https://www.etsy.com/shop/CyanoWood\" target=\"_blank\" style=\"color: #219394;\">Etsy</a> and <a href=\"https://www.amazon.de/s?me=A123C76R657ZYQ\" target=\"_blank\" style=\"color: #219394;\">Amazon</a> store</div>"
+          }
+        },
+        "planet_shopify_planet_89LUmm": {
+          "type": "shopify://apps/planet/blocks/shopify-planet/12047591-3a2d-45cc-9dfd-2ce5eaa45dee",
+          "settings": {
+            "badgeMode": "info",
+            "customText": "",
+            "showMoreInfo": "modal",
+            "showLogo": false,
+            "showStats": true,
+            "showProjects": false,
+            "backgroundColor": "#e1efea",
+            "textColor": "#026341",
+            "borderColor": "#c9dcd2",
+            "fullWidth": true,
+            "marginTop": 0,
+            "marginBottom": 0,
+            "borderRadius": 8
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "caption",
+        "judge_me_reviews_preview_badge_j3QeFK",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "personalise",
+        "d3ae2714-28b2-4757-a5a4-1f9171cc6648",
+        "buy_buttons",
+        "share",
+        "estimated_YGqb6V",
+        "16bf1687-5947-4c0a-aec9-fa723370ab9b",
+        "description",
+        "collapsible-row-2",
+        "collapsible-row-1",
+        "92b2f665-58ab-4f83-a4be-e9e7a399e5e9",
+        "collapsible-row-3",
+        "4aea6cec-59cc-49cb-b2bc-45d1ce054b0b",
+        "29c6eafb-fc66-4e9e-9eaf-eafbf79f419a",
+        "planet_shopify_planet_89LUmm"
+      ],
+      "custom_css": [
+        ".icon-with-text--horizontal .h4 {font-weight: bold; font-size: 1.2rem;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        "h2 {font-weight: bold; text-align: center;}"
+      ],
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "round",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "padding_top": 8,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_7NrRP6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3MambC": {
+          "type": "heading",
+          "settings": {
+            "heading": "You can also visit our Etsy and Amazon stores!",
+            "heading_size": "h1"
+          }
+        },
+        "text_PyiW6D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Expand your shopping possibilities by browsing through our marketplace as well.</p>"
+          }
+        },
+        "button_AmUPHP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Etsy",
+            "button_link": "https://www.etsy.com/shop/CyanoWood",
+            "button_style_secondary": true,
+            "button_label_2": "Amazon",
+            "button_link_2": "https://www.amazon.de/s?me=A123C76R657ZYQ",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_3MambC",
+        "text_PyiW6D",
+        "button_AmUPHP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-a41d9dfd-6a2b-484f-81bb-350044f3acf6",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 28
+      }
+    },
+    "573adcd4-4629-440d-ae6a-7a09bb7d6e98": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "1707227944349cd686": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_ugc_media_grid_3HW8AB": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "judge_me_reviews_review_widget_mgY8qf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        },
+        "judge_me_reviews_medals_34wEQ3": {
+          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_ugc_media_grid_3HW8AB",
+        "judge_me_reviews_review_widget_mgY8qf",
+        "judge_me_reviews_medals_34wEQ3"
+      ],
+      "custom_css": [
+        "h3 {font-weight: bold; font-size: 24px;}",
+        "h2 {font-weight: bold; font-size: 24px;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_pQk8Rh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WngCxh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet the designer of Cyanowood",
+            "heading_size": "h1"
+          }
+        },
+        "text_4GfDpd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Crafting top-notch artistic items with innovative designs and materials for any occasion. Local establishment prioritizes customer happiness over mass production.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_6Re6MD": {
+          "type": "button",
+          "settings": {
+            "button_label": "About us",
+            "button_link": "shopify://pages/about-us-2",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_WngCxh",
+        "text_4GfDpd",
+        "button_6Re6MD"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/20250829-Image_pxb74epxb74epxb7.jpg",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-3892af01-0fe2-4a0e-8a79-f96ee56c2fc6",
+        "color_scheme": "scheme-3892af01-0fe2-4a0e-8a79-f96ee56c2fc6",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "880150c9-0457-4f23-b7fe-34088e05bc34",
+    "main",
+    "related-products",
+    "rich_text_7NrRP6",
+    "573adcd4-4629-440d-ae6a-7a09bb7d6e98",
+    "1707227944349cd686",
+    "image_with_text_pQk8Rh"
+  ]
+}
