@@ -23,6 +23,31 @@
         "padding_bottom": 0
       }
     },
+    "announcement_bar_whTejT": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_mLqgxW": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_mLqgxW"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "inverse",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
@@ -45,6 +70,7 @@
   },
   "order": [
     "c59d199c-c7e9-490b-8158-5ff5bba84cf4",
+    "announcement_bar_whTejT",
     "header"
   ]
 }
