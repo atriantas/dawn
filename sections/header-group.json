@@ -37,6 +37,7 @@
       "block_order": [
         "announcement_mLqgxW"
       ],
+      "disabled": true,
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {
         "auto_rotate": false,
