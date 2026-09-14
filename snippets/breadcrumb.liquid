@@ -43,7 +43,7 @@
               </a>
               <meta itemprop="position" content="{{ itemprop_positon | plus: 2 }}">
             </li>
-          {%- when 'collection' and collection.handle -%}
+          {%- when 'collection' -%}
             {%- if current_tags -%}
               <li itemprop="itemListElement" class="breadcrumbs__item" itemscope itemtype="http://schema.org/ListItem">
                 <a class="breadcrumbs__link" href="{{ collection.url }}" itemprop="item">
@@ -125,3 +125,13 @@
     <div class="breadcrumb_text">{{ section.settings.breadcrumb_text }}</div>
   </div>
 {%- endunless -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 2713..2738
+{% endcomment %}
